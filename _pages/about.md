@@ -9,7 +9,7 @@ sidebar:
 - text: "[![GripMatix](/assets/sponsors/MetrixInsight.png)](https://www.gripmatix.com/gripmatix-citrix-sbc-vdi-scom-management-packs)"
 ---
 
-Welcome to my blog! My name is Tao Yang, I am a Microsoft Azure MVP based in Melbourne, Australia.
+Welcome to my blog! My name is Tao Yang, I work for Microsoft based in Melbourne, Australia and I am a 12-time Microsoft Azure MVP prior to joining Microsoft.
 
 I spend most of my time working on Microsoft technologies. This blog provides a place for me to share my thoughts on various aspect of cloud and data center management, DevOps, Infrastructure as Code, and anything I'm interested in sharing.
 
