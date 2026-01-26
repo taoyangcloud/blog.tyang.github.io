@@ -28,20 +28,20 @@ The script works out the URI to the actual NuGet package for the module and impo
 
 If you want to automate this process, you can easily make a non-interactive version of this script and parameterize all required inputs.
 
-So, here’s the [script](https://gist.github.com/tyconsulting/f8ff2642e6be9ee770a770f2eafb06a4), and feedback is welcome:
+So, here’s the [script](https://gist.github.com/TaoYang-cloud/f8ff2642e6be9ee770a770f2eafb06a4), and feedback is welcome:
 
 ```powershell
 #Requires -Modules AzureRM.Automation, AzureRM.Profile, PowerShellGet
 #Requires -version 5.0
 <#
 =============================================================================================
-AUTHOR:  Tao Yang 
+AUTHOR:  Tao Yang
 DATE:    12/02/2017
 Version: 1.0
 Comment: deploy / update PowerShell modules from a PS Repository to Azure Automation Account
 =============================================================================================
 #>
-Do 
+Do
 {
   $ModuleName = Read-Host -Prompt 'Enter the PowerShell module name'
 }
@@ -56,13 +56,13 @@ if ($PSRepositories.count -gt 0)
   Write-Output -InputObject 'Select the PowerShell repository where you wan to search the module from:'
   $menu = @{}
   $PSRepositorySourceLocations = @{}
-  for ($i = 1;$i -le $PSRepositories.count; $i++) 
+  for ($i = 1;$i -le $PSRepositories.count; $i++)
   {
     Write-Host -Object "$i. $($PSRepositories[$i-1].Name)"
     $menu.Add($i,($PSRepositories[$i-1].Name))
     $PSRepositorySourceLocations.Add($i,($PSRepositories[$i-1].SourceLocation))
   }
-  Do 
+  Do
   {
     [int]$ans = Read-Host -Prompt "Enter selection (1 - $($i -1))"
   }
@@ -87,12 +87,12 @@ if ($subscriptions.count -gt 0)
   Write-Output -InputObject 'Select Azure Subscription of which the Automation Account is located'
 
   $menu = @{}
-  for ($i = 1;$i -le $subscriptions.count; $i++) 
+  for ($i = 1;$i -le $subscriptions.count; $i++)
   {
     Write-Host -Object "$i. $($subscriptions[$i-1].SubscriptionName)"
     $menu.Add($i,($subscriptions[$i-1].SubscriptionId))
   }
-  Do 
+  Do
   {
     [int]$ans = Read-Host -Prompt "Enter selection (1 - $($i -1))"
   }
@@ -101,7 +101,7 @@ if ($subscriptions.count -gt 0)
   $subscriptionID = $menu.Item($ans)
   $null = Set-AzureRmContext -SubscriptionId $subscriptionID
 }
-else 
+else
 {
   Write-Error -Message 'No Azure Subscription found. Unable to continue!'
   Exit -1
@@ -114,13 +114,13 @@ if ($AAAccounts.count -gt 0)
   Write-Output -InputObject 'Select the Azure Automation account:'
   $menu = @{}
   $AAResourceGroups = @{}
-  for ($i = 1;$i -le $AAAccounts.count; $i++) 
+  for ($i = 1;$i -le $AAAccounts.count; $i++)
   {
     Write-Host -Object "$i. $($AAAccounts[$i-1].AutomationAccountName)"
     $menu.Add($i,($AAAccounts[$i-1].AutomationAccountName))
     $AAResourceGroups.Add($i,($AAAccounts[$i-1].ResourcegroupName))
   }
-  Do 
+  Do
   {
     [int]$ans = Read-Host -Prompt "Enter selection (1 - $($i -1))"
   }
@@ -129,7 +129,7 @@ if ($AAAccounts.count -gt 0)
   $AzureAutomationAccountName = $menu.Item($ans)
   $AAAccountResourceGroup = $AAResourceGroups.Item($ans)
 }
-else 
+else
 {
   Write-Error -Message 'No Azure Automation account found the selected Azure subscription. Unable to continue.'
   Exit -1
@@ -141,7 +141,7 @@ If ($ModuleVersion.length -ne 0)
   Write-Output -InputObject "Searching for version '$ModuleVersion' of module '$ModuleName' in the repository '$PSRepositoryName'."
   $ModuleSearchResult = Find-Module -Name $ModuleName -RequiredVersion $ModuleVersion -Repository $PSRepositoryName -ErrorAction SilentlyContinue
 }
-else 
+else
 {
   Write-Output -InputObject "Searching for the latest version of module '$ModuleName' in the repository '$PSRepositoryName'."
   $ModuleSearchResult = Find-Module -Name $ModuleName -Repository $PSRepositoryName -ErrorAction SilentlyContinue
@@ -153,7 +153,7 @@ If ($ModuleSearchResult)
   $ModuleVersionFromSearchResult = $verModuleVersionFromSeachResult.tostring()
   $ModuleNameFromSearchResult = $ModuleSearchResult.Name
   $NugetPackageURI = $PSRepositorySourceLocation + "package/$ModuleNameFromSearchResult/$ModuleVersionFromSearchResult/"
-  Write-Output -InputObject "Module source URI: '$NugetPackageURI'" 
+  Write-Output -InputObject "Module source URI: '$NugetPackageURI'"
 
   #Check Azure Automation acocunt for existing module
   $ExistingAAModule = Get-AzureRmAutomationModule -Name $ModuleNameFromSearchResult -ResourceGroupName $AAAccountResourceGroup -AutomationAccountName $AzureAutomationAccountName -ErrorAction SilentlyContinue
@@ -167,23 +167,23 @@ If ($ModuleSearchResult)
       $ImportJob = New-AzureRmAutomationModule -Name $ModuleNameFromSearchResult -ContentLink $NugetPackageURI -AutomationAccountName $AzureAutomationAccountName -ResourceGroupName $AAAccountResourceGroup
       $bImported = $true
     }
-    elseif ($verModuleVersionFromSeachResult -eq $verExistingModuleVersion) 
+    elseif ($verModuleVersionFromSeachResult -eq $verExistingModuleVersion)
     {
       Write-Output -InputObject "The version in the PowerShell Gallery is '$ModuleVersionFromSearchResult', which is the same as the existing version in the Automation Account. Update is not required."
     }
-    else 
+    else
     {
       Write-Output -InputObject "The version in the PowerShell Gallery is '$ModuleVersionFromSearchResult', which is the lower the existing version in the Automation Account. Update is not required."
     }
   }
-  else 
+  else
   {
     Write-Output -InputObject "Importing module '$ModuleNameFromSearchResult' version '$ModuleVersionFromSearchResult' to Automation Account '$AzureAutomationAccountName' now."
     $ImportJob = New-AzureRmAutomationModule -Name $ModuleNameFromSearchResult -ContentLink $NugetPackageURI -AutomationAccountName $AzureAutomationAccountName -ResourceGroupName $AAAccountResourceGroup
     $bImported = $true
   }
 }
-else 
+else
 {
   Write-Error -Message "Module '$ModuleName' not found in repository '$PSRepositoryName'."
 }
@@ -193,7 +193,7 @@ If ($bImported -eq $true)
 {
   Write-Output -InputObject 'Extracting module activities. Please wait.'
   $bImportCompleted = $false
-  Do 
+  Do
   {
     Start-Sleep -Seconds 5
     $AAModule = Get-AzureRmAutomationModule -Name $ModuleNameFromSearchResult -ResourceGroupName $AAAccountResourceGroup -AutomationAccountName $AzureAutomationAccountName
@@ -202,7 +202,7 @@ If ($bImported -eq $true)
       Write-Output -InputObject 'Module import completed.'
       $bImportCompleted = $true
     }
-    elseif ($AAModule.ProvisioningState -eq 'Failed') 
+    elseif ($AAModule.ProvisioningState -eq 'Failed')
     {
       Write-Error -Message 'Module import failed. Please manually check the error details in the Azure Portal.'
       $bImportCompleted = $true

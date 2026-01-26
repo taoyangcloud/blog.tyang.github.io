@@ -54,9 +54,9 @@ Once we can confirm these PowerShell script outputs got landed in Log Analytics,
 
 ```sql
 AzureDiagnostics
-| where RunbookName_s == "SQLMonitoringDemo" 
-| where ResultDescription contains "Backup" 
-| parse ResultDescription with "SQLServerName: " SQLServerName ", Database: " Database ", Last Backup Finish Date (UTC): '" BackupFinishedDateUTC:datetime  "'"* 
+| where RunbookName_s == "SQLMonitoringDemo"
+| where ResultDescription contains "Backup"
+| parse ResultDescription with "SQLServerName: " SQLServerName ", Database: " Database ", Last Backup Finish Date (UTC): '" BackupFinishedDateUTC:datetime  "'"*
 | project SQLServerName, Database, BackupFinishedDateUTC, TimeGenerated
 | where BackupFinishedDateUTC <= ago(2d)
 ```
@@ -92,12 +92,12 @@ Needless to say, after a while, I started getting alert email notifications:
 
 If you want to learn more about the capability of the Log Analytics query language, make sure you visit the documentation site here: <a title="https://docs.loganalytics.io/index" href="https://docs.loganalytics.io/index">https://docs.loganalytics.io/index</a> and the demo workspace here: <a title="https://portal.loganalytics.io/demo#/discover/home" href="https://portal.loganalytics.io/demo#/discover/home">https://portal.loganalytics.io/demo#/discover/home</a>
 
-Lastly, as promised, here's the [demo runbook](https://gist.github.com/tyconsulting/08bdb5d63be83498a1e64755d5fa8583) I have used in this blog post:
+Lastly, as promised, here's the [demo runbook](https://gist.github.com/TaoYang-cloud/08bdb5d63be83498a1e64755d5fa8583) I have used in this blog post:
 
 ```powershell
  <#
 ====================================================================================================
-AUTHOR:  Tao Yang 
+AUTHOR:  Tao Yang
 DATE:    18/03/2018
 Version: 1.0
 Comment: demo Azure Automation runbook for creating Azure alerts using Log Analytics search queries
@@ -125,7 +125,7 @@ Function Invoke-SQLQuery
   {
     $SQLServerConn = "$SQLServer`\$SQLInstance"
   }
-  else 
+  else
   {
     $SQLServerConn = $SQLServer
   }
@@ -134,7 +134,7 @@ Function Invoke-SQLQuery
   {
     $SQLServerConn = "$SQLServerConn`,$SQLPort"
   }
-  
+
   $ConnectionString = "Server`=$SQLServerConn; Database=$Database;Encrypt=$Encrypt;TrustServerCertificate=$TrustServerCertificate;"
   $SQLCon = New-Object -TypeName System.Data.SqlClient.SqlConnection
   $SQLCon.ConnectionString = $ConnectionString
@@ -148,7 +148,7 @@ Function Invoke-SQLQuery
   $sqlCmd = $SQLCon.CreateCommand()
   $sqlCmd.CommandTimeout = $SQLQueryTimeout
   $sqlCmd.CommandText = $Query
-    
+
   Switch ($CommandType)
   {
 
@@ -236,7 +236,7 @@ Foreach ($SQLServer in $arrSQLServers)
       $LastBackupUTCTime = get-date 0
     }
     Write-Output "SQLServerName: $SQLServer, Database: $DB, Last Backup Finish Date (UTC): '$LastBackupUTCTime'"
-    
+
     #Check DB free space
     $DBFreeSpaceQueryResult = Invoke-SQLQuery -SQLServer $SQLServer -Database $DB -Credential $SQLSACredential -Query $SQLDBFreeSpaceQuery
     $DBFreeSpacePercent = ($DBFreeSpaceQueryResult[0].FreeSpaceMB / $DBFreeSpaceQueryResult[0].CurrentSizeMB).tostring("P")

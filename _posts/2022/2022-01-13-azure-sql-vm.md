@@ -30,7 +30,7 @@ I started working on the code that I'm sharing in this blog post before Christma
 
 ## Bicep Template
 
-The code is located on my BlogPost GitHub repo. You can find it **[HERE](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm)**.
+The code is located on my BlogPost GitHub repo. You can find it **[HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm)**.
 
 The instructions on how to use the Bicep template is documented in the BlogPost GitHub repo already, including how to configure the template parameters, commands to deploy the templates using Azure CLI. It also provided 2 sample parameter files for deploying standalone and clustered SQL VMs. You can use as the way it is, or incorporate it into your CI/CD pipelines.
 
@@ -49,13 +49,13 @@ The following features have not been implemented at this stage:
 * File Share witness for SQL cluster - This is a fairly new capability, I have not used it yet and due to time constraint, it's not implemented in the template at this stage
 * SQL server Automated Patching - I never had requirements to implement it, so it's been disabled in the template.
 
-The bicep template **[main.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/sql.vm/main.bicep)** leverage a number of modules in the [modules](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules) folder for various components that make up the SQL VM and AOAG cluster:
+The bicep template **[main.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/sql.vm/main.bicep)** leverage a number of modules in the [modules](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules) folder for various components that make up the SQL VM and AOAG cluster:
 
-* **[sql-vm.bicep](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-vm.bicep)**: Bicep module for creating Azure Virtual Machine as we as Azure SQL VM ("Microsoft.SqlVirtualMachine/SqlVirtualMachines") resources. The SQL VM can be standalone or as a cluster node.
-* **[sql-group.bicep](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-group.bicep)**: Bicep module for creating Azure SQL VM Groups (SQL VM Group represents the Windows Server Failover Cluster)
-* **[sql-listener.bicep](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-listener.bicep)**: Bicep module for Azure SQL VM Availability Group listener and load balancer
-* **[storage-account.bicep](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-listener.bicep)**: Bicep module for Azure Storage Account (used to create storage accounts used for cluster witness and SQL auto backup)
-* **[sql-cluster.join.bicep](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-listener.bicep)**: Bicep module for joining *existing* SQL VMs to a cluster (not used in the Bicep template)
+* **[sql-vm.bicep](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-vm.bicep)**: Bicep module for creating Azure Virtual Machine as we as Azure SQL VM ("Microsoft.SqlVirtualMachine/SqlVirtualMachines") resources. The SQL VM can be standalone or as a cluster node.
+* **[sql-group.bicep](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-group.bicep)**: Bicep module for creating Azure SQL VM Groups (SQL VM Group represents the Windows Server Failover Cluster)
+* **[sql-listener.bicep](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-listener.bicep)**: Bicep module for Azure SQL VM Availability Group listener and load balancer
+* **[storage-account.bicep](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-listener.bicep)**: Bicep module for Azure Storage Account (used to create storage accounts used for cluster witness and SQL auto backup)
+* **[sql-cluster.join.bicep](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/sql.vm/modules/sql-listener.bicep)**: Bicep module for joining *existing* SQL VMs to a cluster (not used in the Bicep template)
 
 Since modules are converted to nested deployments in ARM template, when this template is deployed, multiple ARM deployments are created (depending on the parameter configuration):
 

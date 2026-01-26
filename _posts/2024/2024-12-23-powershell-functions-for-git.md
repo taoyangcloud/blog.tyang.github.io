@@ -16,7 +16,7 @@ I hope I am not the only one who's struggling with git commands and parsing the 
 
 I have created a few PowerShell functions that interact with Git commands in PowerShell scripts over time. I thought I'd share them here in case they are useful to someone else.
 
-I have bundled them into a PowerShell module file [git-functions.psm1](https://github.com/tyconsulting/BlogPosts/blob/master/Scripts/misc/git-functions.psm1). Before using them, firstly import the module in PowerShell: `import-module ./git-functions.psm1'.
+I have bundled them into a PowerShell module file [git-functions.psm1](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Scripts/misc/git-functions.psm1). Before using them, firstly import the module in PowerShell: `import-module ./git-functions.psm1'.
 
 I use some of these functions in pipeline scripts and some interactively when I'm using my laptops. I have tested these with the latest Git version `2.47.1` on Windows 11, Ubuntu (WSL) and MacOS Sequoia 15.2.
 

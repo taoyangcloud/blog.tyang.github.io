@@ -41,7 +41,7 @@ To fulfill the requirements, I have leveraged a feature in Azure DevOps called P
 
 You can learn more about Pipeline Decorator from the [official documentation](https://learn.microsoft.com/azure/devops/extend/develop/add-pipeline-decorator?view=azure-devops) and [Pipeline decorator expression context](https://learn.microsoft.com/azure/devops/extend/develop/pipeline-decorator-context?view=azure-devops).
 
-**The code for the decorator can be found at my GitHub Repo [ado-pipeline-decorator](https://github.com/tyconsulting/ado-pipeline-decorators/tree/main/decorators/git-tag-validation).**
+**The code for the decorator can be found at my GitHub Repo [ado-pipeline-decorator](https://github.com/TaoYang-cloud/ado-pipeline-decorators/tree/main/decorators/git-tag-validation).**
 
 The `Git Tag Validation` pipeline decorator needs to be published to Microsoft Visual Studio marketplace as a private extension and explicitly shared with the Azure DevOps organizations of your choice.
 
@@ -63,7 +63,7 @@ This configuration ensures the decorator task only gets executed when the pipeli
 4. The pipeline definition ID must be `1`, `2`, or `3` (`or(eq(variables['System.DefinitionId'], '1'), eq(variables['System.DefinitionId'], '2'), eq(variables['System.DefinitionId'], '3'))`) - Update this to the IDs of the pipelines that you want the pipeline decorator to target.
 5. The pipeline must be triggered by a git tag (`startsWith(variables['Build.SourceBranch'], 'refs/tags/'))`)
 
-The decorator injects a task called `Git Tag Validation (Injected)` after each `checkout` task in the pipeline. The task executes a PowerShell script defined as an [inline script](https://github.com/tyconsulting/ado-pipeline-decorators/blob/b08dac1ba898c7f161c07ac48a582f8ac1f541ec/decorators/git-tag-validation/task-check-git-tag.yml#L11-L48) in the decorator's yml file.
+The decorator injects a task called `Git Tag Validation (Injected)` after each `checkout` task in the pipeline. The task executes a PowerShell script defined as an [inline script](https://github.com/TaoYang-cloud/ado-pipeline-decorators/blob/b08dac1ba898c7f161c07ac48a582f8ac1f541ec/decorators/git-tag-validation/task-check-git-tag.yml#L11-L48) in the decorator's yml file.
 
 The script performs the following steps:
 
@@ -71,7 +71,7 @@ The script performs the following steps:
 
 2. Get the latest commit Id of the current checked out tag using command `git rev-list -n 1 $tagName`
 
-3. Fetch the latest *x* number of commits from the default branch using command `git fetch --depth $maxGitFetchDept origin $defaultBranchName` where the value of variable `$maxGitFetchDept` can be defined from the environment variable of the script [here](https://github.com/tyconsulting/ado-pipeline-decorators/blob/b08dac1ba898c7f161c07ac48a582f8ac1f541ec/decorators/git-tag-validation/task-check-git-tag.yml#L7)
+3. Fetch the latest *x* number of commits from the default branch using command `git fetch --depth $maxGitFetchDept origin $defaultBranchName` where the value of variable `$maxGitFetchDept` can be defined from the environment variable of the script [here](https://github.com/TaoYang-cloud/ado-pipeline-decorators/blob/b08dac1ba898c7f161c07ac48a582f8ac1f541ec/decorators/git-tag-validation/task-check-git-tag.yml#L7)
 
 4. Check if the default branch's commit history retrieved from *step 3* contains the latest commit id of the tag that's retrieved from *step 2*.
 
@@ -184,7 +184,7 @@ npm init -y
 npm install azure-devops-extension-sdk --save
 ```
 
-To create the packaged extension, make sure the publisher name is updated and the [SemVer](https://semver.org/) `version` number is increased appropriately in the [`vss-extension.json`](https://github.com/tyconsulting/ado-pipeline-decorators/blob/main/decorators/git-tag-validation/vss-extension.json) file, and then run the following command in the root directory of the extension:
+To create the packaged extension, make sure the publisher name is updated and the [SemVer](https://semver.org/) `version` number is increased appropriately in the [`vss-extension.json`](https://github.com/TaoYang-cloud/ado-pipeline-decorators/blob/main/decorators/git-tag-validation/vss-extension.json) file, and then run the following command in the root directory of the extension:
 
 ```shell
 #create extension

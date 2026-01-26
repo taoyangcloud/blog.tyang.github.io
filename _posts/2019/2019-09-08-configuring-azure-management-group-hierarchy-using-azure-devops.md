@@ -36,7 +36,7 @@ So why do I care about these subscriptions? In the subscriptions under the manag
 
 Since everything should be driven by code and templates, Using Azure DevOps to implement the overall management group hierarchy makes perfect sense.
 
-**<font style="background-color: rgb(255, 255, 0);">All the source code for my solution can be found at my GitHub repo: </font>**<a href="https://github.com/tyconsulting/Azure.ManagementGroup.Hierarchy.Config"><strong><font style="background-color: rgb(255, 255, 0);">https://github.com/tyconsulting/Azure.ManagementGroup.Hierarchy.Config</font></strong></a>
+**<font style="background-color: rgb(255, 255, 0);">All the source code for my solution can be found at my GitHub repo: </font>**<a href="https://github.com/TaoYang-cloud/Azure.ManagementGroup.Hierarchy.Config"><strong><font style="background-color: rgb(255, 255, 0);">https://github.com/TaoYang-cloud/Azure.ManagementGroup.Hierarchy.Config</font></strong></a>
 
 In my solution, the pipeline performs 2 tasks:
 
@@ -153,7 +153,7 @@ Before building the pipelines, there are some pre-requisites need to be taken ca
 
 You will need to create an Azure AD application with a service principal for each tenant that you are going to configure the management group hierarchy for. The service principal will need to have the **owner role** assigned at the tenant root management group level.
 
-You may use my <a href="https://gist.github.com/tyconsulting/91c3899224f80f9b098e20ba8ec1da16">New-AADServivcePrincipal.ps1</a> script to create the service principal. For Example:
+You may use my <a href="https://gist.github.com/TaoYang-cloud/91c3899224f80f9b098e20ba8ec1da16">New-AADServivcePrincipal.ps1</a> script to create the service principal. For Example:
 
 ```powershell
 New-AADServicePrinicipal.ps1 –AADAppName AzDevOpsConnection –KeyType ‘Key’
@@ -171,7 +171,7 @@ Once the service principal is created, you will need to create a service connect
 
 ### Build Pipeline
 
-The build (CI) pipeline is defined in the <a href="https://github.com/tyconsulting/Azure.ManagementGroup.Hierarchy.Config/blob/master/pipelines/build-pipeline.yaml">pipelines/build-pipeline.yaml</a> file in the GitHub repo. you can simply import it, it should work without any modifications.
+The build (CI) pipeline is defined in the <a href="https://github.com/TaoYang-cloud/Azure.ManagementGroup.Hierarchy.Config/blob/master/pipelines/build-pipeline.yaml">pipelines/build-pipeline.yaml</a> file in the GitHub repo. you can simply import it, it should work without any modifications.
 
 <a href="https://blog.tyang.org/wp-content/uploads/2019/09/image-4.png"><img width="1061" height="831" title="image" style="display: inline; background-image: none;" alt="image" src="https://blog.tyang.org/wp-content/uploads/2019/09/image_thumb-4.png" border="0"></a>
 

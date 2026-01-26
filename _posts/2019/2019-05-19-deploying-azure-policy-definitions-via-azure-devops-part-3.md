@@ -35,13 +35,13 @@ We need to create service principals in each Azure AD tenant that you are deploy
 
 **2. Publish AzPolicyTest and Pester modules to an Azure Artifacts feed**
 
-The <a href="https://github.com/tyconsulting/AzPolicyTest">AzPolicyTest </a>PowerShell module is required to perform pester tests in the build pipeline. both AzPolicyTest and its dependency Pester need to be publish to an Azure Artifacts feed. this is explained in details in part 2.
+The <a href="https://github.com/TaoYang-cloud/AzPolicyTest">AzPolicyTest </a>PowerShell module is required to perform pester tests in the build pipeline. both AzPolicyTest and its dependency Pester need to be publish to an Azure Artifacts feed. this is explained in details in part 2.
 
 ## Storing the definition and deployment scripts in Azure Repo
 
 Before creating the pipelines, firstly, create an Azure repo in your DevOps project and store the definition files and deployment scripts in the repo.
 
-Again, everything I used in this blog post is stored in my public GitHub repo: <a href="https://github.com/tyconsulting/azurepolicy">https://github.com/tyconsulting/azurepolicy</a>, although the folder structure is slightly different in the Azure Repo I created. This is how I structured the files in the Azure Repo (as explained in part 1):
+Again, everything I used in this blog post is stored in my public GitHub repo: <a href="https://github.com/TaoYang-cloud/azurepolicy">https://github.com/TaoYang-cloud/azurepolicy</a>, although the folder structure is slightly different in the Azure Repo I created. This is how I structured the files in the Azure Repo (as explained in part 1):
 
 <a href="https://blog.tyang.org/wp-content/uploads/2019/05/image-3.png"><img src="https://blog.tyang.org/wp-content/uploads/2019/05/image_thumb-3.png" alt="image"/></a>
 

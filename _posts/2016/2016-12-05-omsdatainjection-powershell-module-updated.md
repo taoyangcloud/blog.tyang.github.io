@@ -21,4 +21,4 @@ You can get the new version from both PowerShell Gallery and GitHub:
 
 PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/OMSDataInjection/1.1.1" href="https://www.powershellgallery.com/packages/OMSDataInjection/1.1.1">https://www.powershellgallery.com/packages/OMSDataInjection/1.1.1</a>
 
-GitHub: <a title="https://github.com/tyconsulting/OMSDataInjection-PSModule/releases/tag/1.1.1" href="https://github.com/tyconsulting/OMSDataInjection-PSModule/releases/tag/1.1.1">https://github.com/tyconsulting/OMSDataInjection-PSModule/releases/tag/1.1.1</a>
+GitHub: <a title="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases/tag/1.1.1" href="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases/tag/1.1.1">https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases/tag/1.1.1</a>

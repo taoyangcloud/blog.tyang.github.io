@@ -19,7 +19,7 @@ Azure Event Hub Namespace has added support for 2 additional properties in the l
 
 ![01](../../../../assets/images/2023/01/eventhub-policies-01.jpg)
 
-Since Microsoft has not released any built-in policies for controlling these 2 properties, I have created 2 custom policies to enforce the minimum TLS version and restrict public network access. You can find the policy definitions in my [Azure Policy GitHub repo](https://github.com/tyconsulting/azurepolicy)
+Since Microsoft has not released any built-in policies for controlling these 2 properties, I have created 2 custom policies to enforce the minimum TLS version and restrict public network access. You can find the policy definitions in my [Azure Policy GitHub repo](https://github.com/TaoYang-cloud/azurepolicy)
 
-* [Enforce Event Hub minimum TLS version](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/event-hub-minimum-tls-version/azurepolicy.json)
-* [Restrict Event Hub Public Network Access](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/event-hub-restrict-public-network-access/azurepolicy.json)
+* [Enforce Event Hub minimum TLS version](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/event-hub-minimum-tls-version/azurepolicy.json)
+* [Restrict Event Hub Public Network Access](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/event-hub-restrict-public-network-access/azurepolicy.json)

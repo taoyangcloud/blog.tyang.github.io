@@ -28,7 +28,7 @@ I may cover how I use Azure Artifacts to host PowerShell modules and use them in
 
 ## PowerShell Module: TestJSONSchema
 
-* GitHub: <a href="https://github.com/tyconsulting/TestJsonSchema-PS">https://github.com/tyconsulting/TestJsonSchema-PS</a>
+* GitHub: <a href="https://github.com/TaoYang-cloud/TestJsonSchema-PS">https://github.com/TaoYang-cloud/TestJsonSchema-PS</a>
 * PowerShell Gallery: <a href="https://www.powershellgallery.com/packages/TestJsonSchema/1.0.0">https://www.powershellgallery.com/packages/TestJsonSchema/1.0.0</a>
 
 As I mentioned earlier, this module requires PowerShell Core (version 6+), and Pester. You will need to install PowerShell Core and Pester module in PowerShell Core. The instruction is provided in the README.md file in the GitHub repo.

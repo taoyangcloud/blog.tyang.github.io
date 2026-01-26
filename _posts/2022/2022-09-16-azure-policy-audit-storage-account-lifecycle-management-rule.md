@@ -16,4 +16,4 @@ I created a new Azure Policy definition today to audit storage accounts that do 
 
 ![01](../../../../assets/images/2022/09/storage_lifecycle_mgmt_rule_01.jpg)
 
-The policy definition can be found in my **AzurePolicy** GitHub repo [HERE](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/audit-storage-account-without-lifecycle-mgmt-policy/azurepolicy.json)
+The policy definition can be found in my **AzurePolicy** GitHub repo [HERE](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/audit-storage-account-without-lifecycle-mgmt-policy/azurepolicy.json)

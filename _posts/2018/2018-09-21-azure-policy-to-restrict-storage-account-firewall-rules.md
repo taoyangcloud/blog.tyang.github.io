@@ -27,8 +27,8 @@ Together with the original policy to restrict public facing storage accounts, us
 
 I have added both policy definitions into my Azure Policy GitHub repo:
 
-* Restrict public storage accounts: <a title="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount" href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount</a>
-* Restrict storage account firewall rules: <a title="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-storageAccount-firewall-rules" href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-storageAccount-firewall-rules">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-storageAccount-firewall-rules</a>
+* Restrict public storage accounts: <a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount</a>
+* Restrict storage account firewall rules: <a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-storageAccount-firewall-rules" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-storageAccount-firewall-rules">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-storageAccount-firewall-rules</a>
 
 You can simplify your effort by creating a Policy Initiative and include both policies. I created an initiative, and I must supply the list of allowed IP ranges during assignment (each item is separated by ";", keep in mind do not have spaces after semicolons).
 

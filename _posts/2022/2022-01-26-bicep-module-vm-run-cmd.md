@@ -73,7 +73,7 @@ module win_vm_run_cmd '../modules/vm-run-cmd.bicep' = {
 }
 ```
 
-You can find this module from my BlogPost GitHub repo **[HERE](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/vm-run-cmd)**.
+You can find this module from my BlogPost GitHub repo **[HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/vm-run-cmd)**.
 
 The instructions on how to use this Bicep module is documented in the BlogPost GitHub repo already, including how to configure the template parameters, commands to deploy the templates using Azure CLI. It also provided 2 sample Bicep templates coupled with parameter files files for invoking pre-defined commands and custom scripts on both Windows VMs (PowerShell script) and Linux VMs (Shell script).
 

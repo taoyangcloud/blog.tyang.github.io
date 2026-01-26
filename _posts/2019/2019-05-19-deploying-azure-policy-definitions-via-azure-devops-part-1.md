@@ -46,7 +46,7 @@ I won’t be able to share my experience in one blog post. I’ll cover this top
 
 **<a href="https://blog.tyang.org/2019/05/19/deploying-azure-policy-definitions-via-azure-devops-part-3/">Part 3:</a>**<a href="https://blog.tyang.org/2019/05/19/deploying-azure-policy-definitions-via-azure-devops-part-3/"> Configuring build (CI) and release (CD) pipelines in Azure DevOps</a>
 
->**NOTE:** all the definitions and deployment scripts I used in this blog post series are located at:  <br><a href="https://github.com/tyconsulting/azurepolicy">https://github.com/tyconsulting/azurepolicy</a> 
+>**NOTE:** all the definitions and deployment scripts I used in this blog post series are located at:  <br><a href="https://github.com/TaoYang-cloud/azurepolicy">https://github.com/TaoYang-cloud/azurepolicy</a>
 
 This is the part 1 of the blog series.
 
@@ -93,7 +93,7 @@ As you can imagine, I am not happy with how the New-AzPolicyDefinition is implem
 
 **[17/11/2019]: Stefan Stranger has pointed out it is possible to retrieve the AAD token from context token cache using Azure PowerShell task in Azure Pipelines.**
 
-This led me to create a custom deployment script (<a href="https://github.com/tyconsulting/azurepolicy/blob/master/scripts/deploy-policyDef.ps1" target="_blank" rel="noopener noreferrer">deploy-policyDef.ps1</a>) that leverages New-AzPolicyDefinition, but the script uses azurepolicy.json since it contains all the information that’s needed for creating the policy definition. The script also supports:
+This led me to create a custom deployment script (<a href="https://github.com/TaoYang-cloud/azurepolicy/blob/master/scripts/deploy-policyDef.ps1" target="_blank" rel="noopener noreferrer">deploy-policyDef.ps1</a>) that leverages New-AzPolicyDefinition, but the script uses azurepolicy.json since it contains all the information that’s needed for creating the policy definition. The script also supports:
 
 * Supports both management groups and subscriptions
 * Deploy multiple policy definitions if multiple file paths are passed in
@@ -137,7 +137,7 @@ When working with initiative (policy set) definitions, I’m facing the exact sa
 
 Following the same logic, the azurepolicyset.json contains everything, well almost everything! if you look at the sample initiatives, you’ll find some of the azurepolicyset.json files contain the "name" attribute, some don’t. A bit inconsistent there. The "name" is absolutely required when deploy the initiative definition. Similar to policy definitions, the New-PolicySetDefinition cmdlet from Azure PowerShell modules takes the definition and parameters from separate inputs, with some additional string inputs such as name, metadata, etc.
 
-I wrote a similar script to deploy initiative definitions, called <a href="https://github.com/tyconsulting/azurepolicy/blob/master/scripts/deploy-policySetDef.ps1" target="_blank" rel="noopener noreferrer">deploy-policySetDef.ps1</a>. This script allows you to deploy a single initiative definition using the azurepolicyset.json file.
+I wrote a similar script to deploy initiative definitions, called <a href="https://github.com/TaoYang-cloud/azurepolicy/blob/master/scripts/deploy-policySetDef.ps1" target="_blank" rel="noopener noreferrer">deploy-policySetDef.ps1</a>. This script allows you to deploy a single initiative definition using the azurepolicyset.json file.
 
 I also needed to address the issue that I need to be able to reference custom policy definitions in initiative definitions – the resource Ids for for these custom policy definitions are not static (depending on the target management groups or subscriptions of the deployment) and may even be unknown at the time when the initiatives are defined. The workaround I came up with is replacing a section of resource Ids for policy definitions with a string in the initiative definition, and replace the string at the time of deployment
 

@@ -14,8 +14,8 @@ tags:
 
 Few years ago, I published 2 PowerShell modules:
 
-* **PSPesterTest** - This module simplifies PowerShell code analysis using Pester and PSScriptAnalyzer by providing pre-defined pester tests for PowerShell scripts and modules. ([GitHub](https://www.powershellgallery.com/packages/PSPesterTest/), [PSGallery](https://github.com/tyconsulting/PSPesterTest-PSModule))
-* **TestJsonSchema** - Performs Pester Test for JSON schema validation ([GitHub](https://github.com/tyconsulting/TestJsonSchema-PS), [PSGallery](https://www.powershellgallery.com/packages/TestJsonSchema/))
+* **PSPesterTest** - This module simplifies PowerShell code analysis using Pester and PSScriptAnalyzer by providing pre-defined pester tests for PowerShell scripts and modules. ([GitHub](https://www.powershellgallery.com/packages/PSPesterTest/), [PSGallery](https://github.com/TaoYang-cloud/PSPesterTest-PSModule))
+* **TestJsonSchema** - Performs Pester Test for JSON schema validation ([GitHub](https://github.com/TaoYang-cloud/TestJsonSchema-PS), [PSGallery](https://www.powershellgallery.com/packages/TestJsonSchema/))
 
 I just realized today that both of these modules are outdated, not compatible with the latest version of Pester due to the [breaking changes](https://pester-docs.netlify.app/docs/migrations/breaking-changes-in-v5) introduced to Pester v5.
 
@@ -25,10 +25,10 @@ Therefore I've updated both modules to support the latest version of Pester (v5.
 
   * [GitHub](https://www.powershellgallery.com/packages/PSPesterTest/)
 
-  * [PSGallery](https://github.com/tyconsulting/PSPesterTest-PSModule)
+  * [PSGallery](https://github.com/TaoYang-cloud/PSPesterTest-PSModule)
 
 * **TestJsonSchema** v2.0.0:
 
-  * [GitHub](https://github.com/tyconsulting/TestJsonSchema-PS)
+  * [GitHub](https://github.com/TaoYang-cloud/TestJsonSchema-PS)
 
   * [PSGallery](https://www.powershellgallery.com/packages/TestJsonSchema/)

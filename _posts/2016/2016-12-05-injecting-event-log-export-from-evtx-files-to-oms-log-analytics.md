@@ -15,14 +15,14 @@ tags:
 ---
 Over the last few days, I had an requirement injecting events from .evtx files into OMS Log Analytics. A typical .evtx file that I need to process contains over 140,000 events. Since the Azure Automation runbook have the maximum execution time of 3 hours, in order to make the runbook more efficient, I also had to update my OMSDataInjection PowerShell module to support bulk insert (<a title="https://blog.tyang.org/2016/12/05/omsdatainjection-powershell-module-updated/" href="https://blog.tyang.org/2016/12/05/omsdatainjection-powershell-module-updated/">https://blog.tyang.org/2016/12/05/omsdatainjection-powershell-module-updated/</a>).
 
-I have publish the runbook on [GitHub Gist](https://gist.github.com/tyconsulting/72a19595246938ae0fb435a42afa4185):
+I have publish the runbook on [GitHub Gist](https://gist.github.com/TaoYang-cloud/72a19595246938ae0fb435a42afa4185):
 
 ```powershell
 #requires -Version 2.0 -Modules OMSDataInjection
 
 <#
     ========================================================================
-    AUTHOR:  Tao Yang 
+    AUTHOR:  Tao Yang
     DATE:    02/11/2016
     Version: 1.0
     Comment:
@@ -38,7 +38,7 @@ PARAM (
   [Parameter(Mandatory = $true)][String]$OMSLogTypeName,
   [Parameter(Mandatory = $false)][Int]$BatchLimit = 1000,
   [Parameter(Mandatory = $false)][String]$OMSTimeStampFieldName = 'TimeCreated'
-  
+
 )
 
 #Define the excluded fields
@@ -107,7 +107,7 @@ For ($Event = $LogReader.ReadEvent(); $null -ne $Event; $Event = $LogReader.Read
     $BatchCount ++
     $BatchSize = 0
   }
-  
+
 }
 Write-Output -InputObject "Done. Total number of log injected: $i"
 ```

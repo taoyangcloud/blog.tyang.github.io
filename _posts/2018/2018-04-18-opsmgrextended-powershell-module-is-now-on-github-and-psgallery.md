@@ -25,7 +25,7 @@ I was also aware of a bug in the New-OMOverride function in the module since 201
 * Configured the module to automatically load SCOM 2016 SDK DLLs
 * Removed Install-OpsMgrSDK and Import-OpsMgrSDK functions because they are not required
 
-In addition to these updates, I have made the <a href="https://github.com/tyconsulting/OpsMgrExtended-PS-Module" target="_blank" rel="noopener">GitHub repo</a> for this module public and published it to <a href="https://www.powershellgallery.com/packages/OpsMgrExtended" target="_blank" rel="noopener">PowerShell Gallery</a>. Now if you are running PowerShell v5+, you can install this module by simply running:
+In addition to these updates, I have made the <a href="https://github.com/TaoYang-cloud/OpsMgrExtended-PS-Module" target="_blank" rel="noopener">GitHub repo</a> for this module public and published it to <a href="https://www.powershellgallery.com/packages/OpsMgrExtended" target="_blank" rel="noopener">PowerShell Gallery</a>. Now if you are running PowerShell v5+, you can install this module by simply running:
 
 ```powershell
 Install-Module OpsMgrExtended –Repository PSGallery –Force

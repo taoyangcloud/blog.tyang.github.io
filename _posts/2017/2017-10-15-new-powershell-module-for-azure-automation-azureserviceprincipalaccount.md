@@ -72,7 +72,7 @@ Based on these reasons, I have been advising customers to use keys instead of ce
 
 PowerShell Gallery:  [https://www.powershellgallery.com/packages/AzureServicePrincipalAccount](https://www.powershellgallery.com/packages/AzureServicePrincipalAccount)
 
-GitHub: [https://github.com/tyconsulting/AzureServicePrincipalAccount-PS](https://github.com/tyconsulting/AzureServicePrincipalAccount-PS)
+GitHub: [https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS](https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS)
 
 By the default, the Azure AD Service Principal connection type provided by Azure Automation accounts only supports certificate-based Azure AD Service Principals. This module provides an additional connection type for key-based Service Principals:
 
@@ -101,7 +101,7 @@ Furthermore, you can also using this function without connection objects – by 
 
 <a href="https://blog.tyang.org/wp-content/uploads/2017/10/image-2.png"><img style="display: inline; background-image: none;" title="image" src="https://blog.tyang.org/wp-content/uploads/2017/10/image_thumb-2.png" alt="image" width="885" height="393" border="0" /></a>
 
-Although by using a key-based Service Principal, you still need to manually create the AAD application and service principals, there is nothing you need to configure on the Hybrid Workers. There are already many PowerShell sample scripts on how to create an Azure AD Service Principal, just for your reference, [here’s one I’ve been using in the past](https://gist.github.com/tyconsulting/ec73a46113f53c2ad3b59ccaaa7502ce):
+Although by using a key-based Service Principal, you still need to manually create the AAD application and service principals, there is nothing you need to configure on the Hybrid Workers. There are already many PowerShell sample scripts on how to create an Azure AD Service Principal, just for your reference, [here’s one I’ve been using in the past](https://gist.github.com/TaoYang-cloud/ec73a46113f53c2ad3b59ccaaa7502ce):
 
 ```powershell
 #Requires -Version 5.0
@@ -109,7 +109,7 @@ Although by using a key-based Service Principal, you still need to manually crea
 
 <#
   ============================================================================
-  AUTHOR:  Tao Yang 
+  AUTHOR:  Tao Yang
   DATE:    09/10/2017
   Version: 1.0
   Comment: Create Azure AD Application and key phrase based Service Principal

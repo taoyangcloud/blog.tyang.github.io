@@ -31,4 +31,4 @@ This is the list of updates in this release:
 
 As we all know, we pay for the amount of data gets injected into our OMS workspace, this parameter allows you to minimise the size of your events (thus saves money on your OMS spending).
 
-I have published this new release to both <a href="https://github.com/tyconsulting/HybridWorkerToolkit/releases/tag/1.0.3">GitHub</a> and <a href="https://www.powershellgallery.com/packages/HybridWorkerToolkit/1.0.3">PowerShell Gallery</a>.
+I have published this new release to both <a href="https://github.com/TaoYang-cloud/HybridWorkerToolkit/releases/tag/1.0.3">GitHub</a> and <a href="https://www.powershellgallery.com/packages/HybridWorkerToolkit/1.0.3">PowerShell Gallery</a>.

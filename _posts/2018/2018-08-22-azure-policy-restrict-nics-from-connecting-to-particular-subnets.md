@@ -50,7 +50,7 @@ Here’s the policy definition:
   }
 }
 ```
-It is also located in my GitHub repo: <a title="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-vm-nic-from-connecting-to-subnet" href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-vm-nic-from-connecting-to-subnet">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-vm-nic-from-connecting-to-subnet</a>. From this repo, you can download the policy definition, or deploy directly to your environment via Azure Portal. It’s documented in the README.md file.
+It is also located in my GitHub repo: <a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-vm-nic-from-connecting-to-subnet" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-vm-nic-from-connecting-to-subnet">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-vm-nic-from-connecting-to-subnet</a>. From this repo, you can download the policy definition, or deploy directly to your environment via Azure Portal. It’s documented in the README.md file.
 
 When assigning this policy, you must specify the resource ID of the subnet that your want to restrict. The subnet resource ID can be easily obtained from the ARM resource explorer (<a href="https://resources.azure.com">https://resources.azure.com</a>):
 

@@ -30,14 +30,14 @@ This is part 1 of the 2-part series. In this part, I will show you how to use th
 I have named this module **CloudNaming**, it is available in PowerShell Gallery and GitHub:
 
 * [PowerShell Gallery](https://www.powershellgallery.com/packages/CloudNaming)
-* [GitHub](https://github.com/tyconsulting/CloudNaming-Module)
-* [Project Wiki Page](https://github.com/tyconsulting/CloudNaming-Module/wiki)
+* [GitHub](https://github.com/TaoYang-cloud/CloudNaming-Module)
+* [Project Wiki Page](https://github.com/TaoYang-cloud/CloudNaming-Module/wiki)
 
 The `CloudNaming` module contains three functions that can be used in generating Cloud resource names for your organization. The documentation for these three functions are listed below:
 
-* [GetCloudNamingSuportedTypes](https://github.com/tyconsulting/CloudNaming-Module/wiki/GetCloudNamingSupportedTypes-Command): Get supported cloud resource types from the CloudNaming module
-* [GetCloudResourceName](https://github.com/tyconsulting/CloudNaming-Module/wiki/GetCloudResourceName-Command): Generate cloud resource names based on predefined naming standard.
-* [NewCloudNamingConfigFile](https://github.com/tyconsulting/CloudNaming-Module/wiki/NewCloudNamingConfigFile-Command): Create a new custom configuration file for the CloudNaming module to use.
+* [GetCloudNamingSuportedTypes](https://github.com/TaoYang-cloud/CloudNaming-Module/wiki/GetCloudNamingSupportedTypes-Command): Get supported cloud resource types from the CloudNaming module
+* [GetCloudResourceName](https://github.com/TaoYang-cloud/CloudNaming-Module/wiki/GetCloudResourceName-Command): Generate cloud resource names based on predefined naming standard.
+* [NewCloudNamingConfigFile](https://github.com/TaoYang-cloud/CloudNaming-Module/wiki/NewCloudNamingConfigFile-Command): Create a new custom configuration file for the CloudNaming module to use.
 
 This module leverages to following inputs that are very common in most organizations:
 
@@ -69,7 +69,7 @@ After installation, take a look at the `cloudNaming.json` file inside the module
 
 You can also create your own version of the `cloudNaming.json` configuration file and pass it to the module when you call it.
 
-The instruction for creating / updating the `cloudNaming.json` file is available in the Project Wiki Page [Create Custom Json Config File](https://github.com/tyconsulting/CloudNaming-Module/wiki/Create-Custom-Json-Config-File).
+The instruction for creating / updating the `cloudNaming.json` file is available in the Project Wiki Page [Create Custom Json Config File](https://github.com/TaoYang-cloud/CloudNaming-Module/wiki/Create-Custom-Json-Config-File).
 
 ### How to generate resource names
 

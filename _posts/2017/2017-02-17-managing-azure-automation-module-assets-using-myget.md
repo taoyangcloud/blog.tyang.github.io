@@ -39,13 +39,13 @@ Since managing modules in your Azure Automation accounts and hybrid workers are 
 
 Over the past few months, I have invested lot of my time on MyGet and looking for ways to close these gaps. Few months ago, I have released a PowerShell DSC Resource module called cPowerShellPackageManagement (<a title="https://blog.tyang.org/2016/09/15/powershell-dsc-resource-for-managing-repositories-and-modules/" href="https://blog.tyang.org/2016/09/15/powershell-dsc-resource-for-managing-repositories-and-modules/">https://blog.tyang.org/2016/09/15/powershell-dsc-resource-for-managing-repositories-and-modules/</a>). By using this DSC resource module, we can easily develop DSC configurations for computers (such as Hybrid Workers) to automatically install modules from a PowerShell module repository (i.e. a MyGet feed). This approach closes the gaps of managing Hybrid Worker computers (item #2 on the list above). Today, I am going to discuss how we can tackle item #1 and #3. Before I start talking about my solutions, let me quickly introduce MyGet first.
 
-## What is MyGet? 
+## What is MyGet?
 
 Myget (<a href="http://www.myget.org">www.myget.org</a>) is a SaaS based package repository hosted on the cloud. It supports all the popular package providers such as NuGet, Npm etc. It can host both private and public repository (called a feed) for you or your organisation.
 
 If you come from a developer or DevOps background, you may have already heard about MyGet in the past, or have used similar on-premises package repositories (such as ProGet). If you are an IT Pro, since you are reading this blog post right now, you must be familiar with PowerShell, therefore must have heard or used PowerShell Gallery (<a href="https://powershellgallery.com">https://powershellgallery.com</a>). You can use MyGet the same way as PowerShell Gallery in PowerShell version 5 and later, except you have absolute control of the content in your feeds. Also,  if you are using a paid MyGet account, you can have private feeds and you can control the access by issuing API keys. You can also create multiple feeds that contain different packages (PowerShell modules in this case). i.e. if you develop PowerShell modules, you can have a Dev feed for you to use during development, and also Test and Production feeds for testing and production uses.
 
-## Why Do I Need MyGet? 
+## Why Do I Need MyGet?
 
 You may be a little bit hesitate to use PowerShell Gallery because it is 100% public. As a regular user like everyone else, you can only do very little. i.e. you can publish modules to PowerShell gallery, but you can’t guarantee your modules will stay there forever. Microsoft may decide to un-list your modules if they find problems with it (i.e. failed to comply with the rules set in the PSScriptAnalyzer). You also don’t have access to delete your modules from PowerShell Gallery. You can un-list your modules, but they are still hosted there. To me, PowerShell Gallery is more like a community platform that allows everyone to share their work, but you should not use it in any production environments because you don’t have any controls on the content, how can you make sure the content you need is going to be there tomorrow?
 
@@ -53,11 +53,11 @@ MyGet allows you to create feeds that you have total control, and as I mentioned
 
 MyGet also ships with other awesome features, such as Webhook support.
 
-## Automating Module Deployment to Automation Account 
+## Automating Module Deployment to Automation Account
 
 I have developed a runbook that retrieves a list of modules from a repository (i.e. your MyGet feed), and import each module to the Automation account of where the runbook resides, if the module does not exist or the version is lower than the latest available version from the module repository. Before importing, the runbook also tries to work out the module dependencies and import required modules in groups (i.e. the modules without dependencies are imported first).  Here’s the runbook source code:
 
-https://gist.github.com/tyconsulting/df78d43e64fe86fe772f947fded3c4da
+https://gist.github.com/TaoYang-cloud/df78d43e64fe86fe772f947fded3c4da
 
 >**Note:** this runbook does not download and zip up PowerShell modules from the repository feed. Instead, it construct the URI to the underlying NuGet package and import the package directly to your automation account.
 
@@ -111,7 +111,7 @@ Once you have configured your MyGet feed as a PowerShell repository on a compute
 
 If you want to configure multiple Automation accounts to sync with a single MyGet feed, you can simply create the runbook and required assets in each automation account, and add a webhook trigger for each instance of the runbook within your MyGet feed.
 
-## Things to Watchout 
+## Things to Watchout
 
 there are few things that you need to watch out when using this solution:
 
@@ -127,7 +127,7 @@ This may cause some of the module imports to fail. For example, if you have a mo
 
 Module import into Azure Automation account takes a lot of time. when running a runbook job on Azure workers, the runbook can run maximum 3 hours due to its fair share policy. so if you have a lot of modules to load in the beginning, you need to make sure the runbook job can be completed within 3 hours. or you may have to rerun the runbook to pickup the modules didn’t get imported in the previous runbook job. Alternatively, you can configure the runbook to run on a Hybrid Worker group, because the fair share policy does not apply when the job is being executed on hybrid workers.
 
-## Conclusion 
+## Conclusion
 
 If you use a dedicated MyGet feed to host all required modules for Azure Automation, you can use the cPowerShellPackageManagement DSC resource module I mentioned earlier in this blog post to automate the module deployment to Hybrid Workers. In the same time, by using the method described in this blog post, you have also got the Automation account covered.
 

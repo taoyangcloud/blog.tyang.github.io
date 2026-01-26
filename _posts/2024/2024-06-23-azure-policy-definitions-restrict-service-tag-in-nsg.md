@@ -23,11 +23,11 @@ When dealing with ARM APIs for resources in `Microsoft.Network` resource provide
 
 As result, we had to create 2 Policy definitions, one targeting the parent resource NSG itself (`Microsoft.Network/networkSecurityGroups`) and another one targeting the child resource NSG security rules (`Microsoft.Network/networkSecurityGroups/securityRules`). When assigning the policies, you need to make sure you assign both policies to cover the both deployment scenario.
 
-You can find find both policy definitions in my [azurepolicy GitHub repo](https://github.com/tyconsulting/azurepolicy):
+You can find find both policy definitions in my [azurepolicy GitHub repo](https://github.com/TaoYang-cloud/azurepolicy):
 
-- Policy Definition Targeting the NSG: [Restrict Use of Specific Service Tag in NSG](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/restrict-service-tags-in-nsgs/pol-deny-service-tag-in-nsg.json)
-- Policy Definition Targeting the NSG rule: [Restrict Use of Specific Service Tag in NSG Security Rules](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/restrict-service-tags-in-nsgs/pol-deny-service-tag-in-nsg-rule.json)
+- Policy Definition Targeting the NSG: [Restrict Use of Specific Service Tag in NSG](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/restrict-service-tags-in-nsgs/pol-deny-service-tag-in-nsg.json)
+- Policy Definition Targeting the NSG rule: [Restrict Use of Specific Service Tag in NSG Security Rules](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/restrict-service-tags-in-nsgs/pol-deny-service-tag-in-nsg-rule.json)
 
-I have also provided a [sample Policy Initiative](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/restrict-service-tags-in-nsgs/polset-nsg.json) that restricts 2 service tags (`Internet` and `Storage.AustraliaCentral`) in both inbound and outbound rules. So in total there are 8 member policies in the initiative (**2** policies per service tag per direction).
+I have also provided a [sample Policy Initiative](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/restrict-service-tags-in-nsgs/polset-nsg.json) that restricts 2 service tags (`Internet` and `Storage.AustraliaCentral`) in both inbound and outbound rules. So in total there are 8 member policies in the initiative (**2** policies per service tag per direction).
 
 >**NOTE**: We have purposely designed the policy definition this way that only allow a single service tag per policy instance instead of a full array of disallowed service tags. It is easier this way when you need to create policy exemptions for a specific NSG to use a specific disallowed service tags.

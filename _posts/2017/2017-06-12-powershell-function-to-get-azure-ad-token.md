@@ -19,7 +19,7 @@ When making Azure Resource Manager REST API calls, you will firstly need to obta
 
 My good friend Stanislav Zhelyazkov (<a href="https://twitter.com/StanZhelyazkov">@StanZhelyazkov</a>) has written a PowerShell function call Get-AADToken as part of the OMSSearch PowerShell module for this purpose. You can find it in the OMSSearch project’s GitHub repo: <a title="https://github.com/slavizh/OMSSearch/blob/master/OMSSearch.psm1" href="https://github.com/slavizh/OMSSearch/blob/master/OMSSearch.psm1">https://github.com/slavizh/OMSSearch/blob/master/OMSSearch.psm1</a>
 
-I have been using this functions in many projects in the past and it served me well. However, the limitation for Stan’s function is that it only works with user principals – you can only generate such a token if you have an USER account. Today, I needed to make ARM REST API calls using an Azure AD application Service Principal. So I had to update Stan’s function in order to support AAD applications. Here’s the [updated version]((https://gist.github.com/tyconsulting/6d2ac80d597273c342776bd83999db7f)):
+I have been using this functions in many projects in the past and it served me well. However, the limitation for Stan’s function is that it only works with user principals – you can only generate such a token if you have an USER account. Today, I needed to make ARM REST API calls using an Azure AD application Service Principal. So I had to update Stan’s function in order to support AAD applications. Here’s the [updated version]((https://gist.github.com/TaoYang-cloud/6d2ac80d597273c342776bd83999db7f)):
 
 ```powershell
 Function Get-AADToken {
@@ -28,12 +28,12 @@ Function Get-AADToken {
   PARAM (
     [Parameter(Position=0,Mandatory=$true)]
     [ValidateScript({
-          try 
+          try
           {
             [System.Guid]::Parse($_) | Out-Null
             $true
-          } 
-          catch 
+          }
+          catch
           {
             $false
           }
@@ -45,7 +45,7 @@ Function Get-AADToken {
     [pscredential]
     [System.Management.Automation.CredentialAttribute()]
     $Credential,
-    
+
     [Parameter(Position=0,Mandatory=$false)][Alias('type')]
     [ValidateSet('UserPrincipal', 'ServicePrincipal')]
     [String]$AuthenticationType = 'UserPrincipal'

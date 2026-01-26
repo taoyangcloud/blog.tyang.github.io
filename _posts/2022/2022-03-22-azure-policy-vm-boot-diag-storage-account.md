@@ -18,4 +18,4 @@ This policy will block or generate audit log if the Virtual Machine has either d
 
 ![01](../../../../assets/images/2022/03/vm-boot-diag-policy-01.jpg)
 
-The policy definition can be found in my **AzurePolicy** GitHub repo [HERE](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/vm-without-customer-managed-boot-diag-storage-account).
+The policy definition can be found in my **AzurePolicy** GitHub repo [HERE](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/vm-without-customer-managed-boot-diag-storage-account).

@@ -30,15 +30,15 @@ These two posts demonstrated two important steps that we need to prepare for the
  * Upload the latest AzureRM.Profile and AzureRM.Compute PowerShell modules to Azure Functions
  * Encrypt the password for the service account to be used to access the Azure subscription.
 
-Once done, we need to update the user name and the encrypted password in the [code](https://gist.github.com/tyconsulting/99f44feff3dbf1287ababa9d652b3064) below (line 24 and 25)
+Once done, we need to update the user name and the encrypted password in the [code](https://gist.github.com/TaoYang-cloud/99f44feff3dbf1287ababa9d652b3064) below (line 24 and 25)
 
 ```powershell
 $requestBody = Get-Content $req -Raw | ConvertFrom-Json
 $subscriptionId = $requestBody.subscriptionid
 
-if ($req_query_subscriptionid) 
+if ($req_query_subscriptionid)
 {
-    $subscriptionId = $req_query_subscriptionid 
+    $subscriptionId = $req_query_subscriptionid
 }
 
 if ($subscriptionId -eq $null)

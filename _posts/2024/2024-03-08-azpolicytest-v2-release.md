@@ -15,7 +15,7 @@ tags:
 ---
 
 ## Introduction
-I created the PowerShell module AzPolicyTest ([GitHub](https://github.com/tyconsulting/AzPolicyTest), [PowerShellGallery](https://www.powershellgallery.com/packages/AzPolicyTest)) back in 2019. This module provides a list of Pester tests can be used to validate the Azure Policy and Initiative definitions. It can also be used in your IaC pipelines. I have previously blogged about this tool in the blog post [Deploying Azure Policy Definitions via Azure DevOps (Part 2)](https://blog.tyang.org/2019/05/19/deploying-azure-policy-definitions-via-azure-devops-part-2/).
+I created the PowerShell module AzPolicyTest ([GitHub](https://github.com/TaoYang-cloud/AzPolicyTest), [PowerShellGallery](https://www.powershellgallery.com/packages/AzPolicyTest)) back in 2019. This module provides a list of Pester tests can be used to validate the Azure Policy and Initiative definitions. It can also be used in your IaC pipelines. I have previously blogged about this tool in the blog post [Deploying Azure Policy Definitions via Azure DevOps (Part 2)](https://blog.tyang.org/2019/05/19/deploying-azure-policy-definitions-via-azure-devops-part-2/).
 
 The initial version 1.0 was developed using Pester v4. It has been 5 years and it has stopped working long time ago due to the breaking changes introduced in Pester v5. On the other hand, a lot of new capabilities have been introduced in Azure Policy since 2019. I have been wanting to update this module for a long time, but I just never got around to it.
 
@@ -136,7 +136,7 @@ The following Tests are included in the module:
 
 I have also bumped the minimum required PowerShell version to v7.0.0 and Pester module version to v5.5.0. Therefore you will no longer be able to use this module in the legacy Windows PowerShell (v5) environment (and if you are still using Windows PowerShell, you should really stop doing that!).
 
-I have in included few policy and initiative definitions that I used for testing the PowerShell module. you can find them in the GitHub repo under the [test_definitions](https://github.com/tyconsulting/AzPolicyTest/tree/master/test_definitions) folder.
+I have in included few policy and initiative definitions that I used for testing the PowerShell module. you can find them in the GitHub repo under the [test_definitions](https://github.com/TaoYang-cloud/AzPolicyTest/tree/master/test_definitions) folder.
 
 
 Lastly, I wanted to mention that I was thinking about adding additional tests to validate the policy definition json file against the official JSON schema for Azure policy definitions. However I quickly scrapped the idea due to few limitations:

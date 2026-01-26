@@ -24,9 +24,9 @@ In this particular environment, the team that uses ADF and the team deploys the 
 
 The workaround is very simple, I firstly added the ADF `globalParameter` as a Bicep parameter and then added a step in my IaC pipeline to retrieve the existing Global Parameters from the ADF and save them to the Template Parameter.
 
-I cannot share the real code here since it's part of a very complex project. But I have developed a demo to show the process. You can find the PowerShell script and Bicep Template in my [BlogPosts GitHub repo](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/adf-global-parameters).
+I cannot share the real code here since it's part of a very complex project. But I have developed a demo to show the process. You can find the PowerShell script and Bicep Template in my [BlogPosts GitHub repo](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/adf-global-parameters).
 
-The [deployADF.ps1](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/adf-global-parameters/deployADF.ps1) script does the following:
+The [deployADF.ps1](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/adf-global-parameters/deployADF.ps1) script does the following:
 
 1. Retrieve the existing Global Parameters from the ADF
 2. If the Global Parameters are not empty, save them to an Updated Template Parameter JSON file and use the Updated Parameter file for deployment

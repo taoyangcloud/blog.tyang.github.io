@@ -38,7 +38,7 @@ Here’s the policy definition:
 }
 ```
 
-It is located in my GitHub repo, where you can download or deploy directly to your environment via Azure portal:<a title="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-ips" href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-ips">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-ips</a>
+It is located in my GitHub repo, where you can download or deploy directly to your environment via Azure portal:<a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-ips" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-ips">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-ips</a>
 
 Once the policy is assigned (ideally to a resource group), you will be blocked if you are trying to create a VM with public IP:
 

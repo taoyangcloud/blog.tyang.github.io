@@ -20,4 +20,4 @@ In this version (v1.3.0), I’ve added an additional optional input parameter to
 
 This module is available on PowerShell Gallery: <a href="https://www.powershellgallery.com/packages/OMSDataInjection">https://www.powershellgallery.com/packages/OMSDataInjection</a>
 
-and GitHub: <a href="https://github.com/tyconsulting/OMSDataInjection-PSModule">https://github.com/tyconsulting/OMSDataInjection-PSModule</a>
+and GitHub: <a href="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule">https://github.com/TaoYang-cloud/OMSDataInjection-PSModule</a>

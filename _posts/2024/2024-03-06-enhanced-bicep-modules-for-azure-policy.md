@@ -35,10 +35,10 @@ This issue is actually pretty easy to fix. Instead of calling the module for eac
 
 ## Enhanced Policy Definition and Initiative Modules
 
-I have updated the policy definition and initiative modules to support deploying multiple definitions. The updated modules are available in my GitHub repo [HERE](https://github.com/tyconsulting/BlogPosts/tree/master/BicepModules/authorization):
+I have updated the policy definition and initiative modules to support deploying multiple definitions. The updated modules are available in my GitHub repo [HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/BicepModules/authorization):
 
-* [Policy Definition Module](https://github.com/tyconsulting/BlogPosts/tree/master/BicepModules/authorization/policy-definition)
-* [Policy Initiative Module](https://github.com/tyconsulting/BlogPosts/tree/master/BicepModules/authorization/policy-set-definition)
+* [Policy Definition Module](https://github.com/TaoYang-cloud/BlogPosts/tree/master/BicepModules/authorization/policy-definition)
+* [Policy Initiative Module](https://github.com/TaoYang-cloud/BlogPosts/tree/master/BicepModules/authorization/policy-set-definition)
 
 These modules are based on the original CARML modules, with the following enhancements:
 
@@ -57,14 +57,14 @@ There are 3 deployments because I have called the wrapper "all scope" module, wh
 
 I have also included the Bicep templates I have used in my lab environments for the policy definition and initiative deployments in the GitHub repo. You can find the templates here:
 
-* [policy-definitions](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/policy-definitions)
-* [policy-initiatives](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/policy-initiatives)
+* [policy-definitions](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/policy-definitions)
+* [policy-initiatives](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/policy-initiatives)
 
 ### Policy Definition Template
 
 As the standard, the Azure policy definitions are defined in JSON files. I have included few sample policy definition JSON files in the same directory of the policy definition Bicep template.
 
-I firstly import the JSON content of each policy file into an array variable using the [`loadJsonContent()` funciton](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/policy-definitions/main.bicep#L4-L20) in Bicep.
+I firstly import the JSON content of each policy file into an array variable using the [`loadJsonContent()` funciton](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/policy-definitions/main.bicep#L4-L20) in Bicep.
 
 ```terraform
 var policyDefinitions = [
@@ -88,7 +88,7 @@ var mappedPolicyDefinitions = map(range(0, length(policyDefinitions)), i => {
   })
 ```
 
-Lastly, I simply [called the Policy Definition module](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/policy-definitions/main.bicep#L34-L39) using the formatted array `mappedPolicyDefinitions` as the parameter:
+Lastly, I simply [called the Policy Definition module](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/policy-definitions/main.bicep#L34-L39) using the formatted array `mappedPolicyDefinitions` as the parameter:
 
 ```terraform
 module policyDefs '../../BicepModules/authorization/policy-definition/main.bicep' = {
@@ -107,7 +107,7 @@ Normally when referencing a policy definition in an initiative, you will need to
 
 I have included couple of sample policy initiatives that are made up using some of the policies deployed by the policy definition template. These policy initiative definitions are also defined as the standard Initiative JSON format in json files. they are placed in the same directory as the policy initiative Bicep template.
 
-Again, I firstly load the json content of all the policy initiative files into an array variable using the [`loadJsonContent()` function](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/policy-initiatives/main.bicep#L8-L11):
+Again, I firstly load the json content of all the policy initiative files into an array variable using the [`loadJsonContent()` function](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/policy-initiatives/main.bicep#L8-L11):
 
 ```terraform
 var policySetDefinitions = [
@@ -116,7 +116,7 @@ var policySetDefinitions = [
 ]
 ```
 
-then following the same practice, I used the lambda function `map()` to format the json object into the user-defined type for the policy initiative which is defined in the module. However, in this case, I had to [nest another `map()` function](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/policy-initiatives/main.bicep#L20-L25) to replace the token string `{policyLocationResourceId}` with the management group Id in the policy initiative definitions:
+then following the same practice, I used the lambda function `map()` to format the json object into the user-defined type for the policy initiative which is defined in the module. However, in this case, I had to [nest another `map()` function](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/policy-initiatives/main.bicep#L20-L25) to replace the token string `{policyLocationResourceId}` with the management group Id in the policy initiative definitions:
 
 ```terraform
 var mappedPolicySetDefinitions = map(range(0, length(policySetDefinitions)), i => {
@@ -135,7 +135,7 @@ var mappedPolicySetDefinitions = map(range(0, length(policySetDefinitions)), i =
   })
 ```
 
-Lastly, same as the policy definition template, I called the [Policy Initiative module](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/policy-initiatives/main.bicep#L29-L34) using the formatted array `mappedPolicySetDefinitions` as the parameter:
+Lastly, same as the policy definition template, I called the [Policy Initiative module](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/policy-initiatives/main.bicep#L29-L34) using the formatted array `mappedPolicySetDefinitions` as the parameter:
 
 ```terraform
 module policyInitiatives '../../BicepModules/authorization/policy-set-definition/main.bicep' = {

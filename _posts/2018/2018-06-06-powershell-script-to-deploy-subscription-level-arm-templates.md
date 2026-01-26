@@ -68,7 +68,7 @@ Few things to be aware of:
 * The location field is still required even when deploying the template to a subscription (instead of a resource group)
 * the –ParameterFilePath parameter is optional. Only use it if you need to pass parameters into the template
 * You still need to login to Azure using Add-AzureRMAccount, because if you execute this script within the Azure PowerShell task in VSTS, it is already logged in using the service endpoint you have specified. This is to simulate the same context, and it is required to lookup the Azure AD Service Principal.
-* The function that generates oAuth token for the Service Principal is copied from my PowerShell module **AzureServicePrincipalAccount** (<a href="https://github.com/tyconsulting/AzureServicePrincipalAccount-PS">GitHub</a>, <a href="https://www.powershellgallery.com/packages/AzureServicePrincipalAccount">PSGallery</a>). I took it out instead of using the module so we don’t have to worry about installing the module to the VSTS agents.
+* The function that generates oAuth token for the Service Principal is copied from my PowerShell module **AzureServicePrincipalAccount** (<a href="https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS">GitHub</a>, <a href="https://www.powershellgallery.com/packages/AzureServicePrincipalAccount">PSGallery</a>). I took it out instead of using the module so we don’t have to worry about installing the module to the VSTS agents.
 * I have put a lot of information in the verbose stream. Use –verbose to view them
 
 i.e. the output when I deployed the sample template from my previous post:

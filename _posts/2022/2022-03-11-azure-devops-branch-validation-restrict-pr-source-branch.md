@@ -82,4 +82,4 @@ If I create a PR from a branch other than **main**, the validation will fail and
 ![04](../../../../assets/images/2022/03/ado-build-validation-04.jpg)
 ![05](../../../../assets/images/2022/03/ado-build-validation-05.jpg)
 
-The YAML pipeline and pipeline template can also be found from my BlogPost GitHub repo **[HERE](https://github.com/tyconsulting/BlogPosts/tree/master/azure-pipelines/build-validation)**.
+The YAML pipeline and pipeline template can also be found from my BlogPost GitHub repo **[HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/azure-pipelines/build-validation)**.

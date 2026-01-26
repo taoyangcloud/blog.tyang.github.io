@@ -17,7 +17,7 @@ This afternoon my colleague asked me to help with the Resource Graph query for t
 
 I then spent the entire afternoon trying to figure out if it's even possible to do this natively all within Azure Resource Graph. In the end, I have figured it out. This must be one of the hardest queries I have every developed. I have tested this in my lab, the results seemed matching what I see on the portal.
 
-The query can be found in [my GitHub repo HERE](https://github.com/tyconsulting/AzureResourceGraph/blob/master/Queries/RoleAssignment.md#list-all-owner-role-assignments-by-subscriptions-including-inherited-assignments).
+The query can be found in [my GitHub repo HERE](https://github.com/TaoYang-cloud/AzureResourceGraph/blob/master/Queries/RoleAssignment.md#list-all-owner-role-assignments-by-subscriptions-including-inherited-assignments).
 
 Query Results:
 

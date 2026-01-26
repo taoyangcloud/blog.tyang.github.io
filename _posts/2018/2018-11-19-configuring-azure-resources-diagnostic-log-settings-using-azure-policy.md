@@ -112,6 +112,6 @@ Please keep in mind, for any resources deployed as the result of "DeployIfNotExi
 
 <a href="https://blog.tyang.org/wp-content/uploads/2018/11/image-4.png"><img style="display: inline; background-image: none;" title="image" src="https://blog.tyang.org/wp-content/uploads/2018/11/image_thumb-4.png" alt="image" width="973" height="375" border="0" /></a>
 
-You can find the template from my GitHub repo here: <a title="https://github.com/tyconsulting/azurepolicy/tree/master/arm-templates/diagnostic-settings" href="https://github.com/tyconsulting/azurepolicy/tree/master/arm-templates/diagnostic-settings">https://github.com/tyconsulting/azurepolicy/tree/master/arm-templates/diagnostic-settings</a>
+You can find the template from my GitHub repo here: <a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/arm-templates/diagnostic-settings" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/arm-templates/diagnostic-settings">https://github.com/TaoYang-cloud/azurepolicy/tree/master/arm-templates/diagnostic-settings</a>
 
 Lastly, please feel free to fork and raise PR if you’ve found any bugs or missing resource types.

@@ -11,7 +11,7 @@ tags:
   - Azure Bicep
 ---
 
-Firstly, apologies for not been too active in writing blog posts lately because I have been really busy with my current project. 
+Firstly, apologies for not been too active in writing blog posts lately because I have been really busy with my current project.
 
 [Azure Bicep](https://github.com/azure/bicep) has recently reached an important millstone when version 0.3 was announced. v0.3 is now officially supported by Microsoft support plans and it's on parity with ARM templates.
 
@@ -32,7 +32,7 @@ This has been a pain for me in the past, I know a good workaround is making cust
 
 Now to do this natively using only ARM templates (or Bicep in this case), I was able to create 2 simple deployment scripts within my template to cover both new and existing scenarios.
 
->**NOTE:** the source code of this example solution is located in my [GitHub repo](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/role.definitions).
+>**NOTE:** the source code of this example solution is located in my [GitHub repo](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/role.definitions).
 
 Here's the logical flow for my template:
 
@@ -48,19 +48,19 @@ To achieve what I need to do, I must use a subscription level template with nest
 1. I'm deploying both subscription level resources (resource group, role definitions) and resource group level resources (storage account, deployment scripts)
 2. I need to use the output of the role definition discovery deployment script as the conditions for the role definition and the role update deployment scripts. Since I cannot directly use the output of a resource in the condition for another resource because the outputs only becomes available during run time and this is not supported by ARM templates, I had to use nested templates so I can pass the discovery script output as an input parameter in other nested templates.
 
-As you can imagine, this template can be really complicated to develop using ARM template. Luckily now that with the support of modules in Bicep, I can split them into different bicep files, and each nested template becomes a module in the main Bicep template. The overall authoring experience has become a lot more pleasant. My [main.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/main.bicep) file has only 70 lines:
+As you can imagine, this template can be really complicated to develop using ARM template. Luckily now that with the support of modules in Bicep, I can split them into different bicep files, and each nested template becomes a module in the main Bicep template. The overall authoring experience has become a lot more pleasant. My [main.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/main.bicep) file has only 70 lines:
 
 ![](../../../../assets/images/2021/03/image1.png)
 
-The 1st deployment script (for existing role discovery) is defined in [role-discovery.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-discovery.bicep. ). 
+The 1st deployment script (for existing role discovery) is defined in [role-discovery.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-discovery.bicep. ).
 
-The 2nd deployment script (for modifying existing role definition) is defined in [role-scope-update.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-scope-update.bicep). 
+The 2nd deployment script (for modifying existing role definition) is defined in [role-scope-update.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-scope-update.bicep).
 
-The actual role definition is defined in [role-definition.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-definition.bicep).
+The actual role definition is defined in [role-definition.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-definition.bicep).
 
 both scripts are using Azure PowerShell and connect to my Azure environment using the managed identity I created previously.
 
-As you can see, the resource blocks in [role-definition.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-definition.bicep#L8) and [role-scope-update.bicep](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-scope-update.bicep#L11) both have a condition defined. They both use the an input parameter called *roleExists* in the condition, which is the passed in to the module with the value from the [output of the first role discovery deployment script](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-discovery.bicep#L49):
+As you can see, the resource blocks in [role-definition.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-definition.bicep#L8) and [role-scope-update.bicep](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-scope-update.bicep#L11) both have a condition defined. They both use the an input parameter called *roleExists* in the condition, which is the passed in to the module with the value from the [output of the first role discovery deployment script](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/role.definitions/role-discovery.bicep#L49):
 
 ![](../../../../assets/images/2021/03/image2.png)
 

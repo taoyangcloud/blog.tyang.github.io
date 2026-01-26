@@ -27,4 +27,4 @@ I’ve updated the Policy Definitions for the resource Diagnostic Settings again
   * VM
   * VMSS
 
-You can find the latest version on my GitHub repo: <a href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings</a>
+You can find the latest version on my GitHub repo: <a href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings</a>

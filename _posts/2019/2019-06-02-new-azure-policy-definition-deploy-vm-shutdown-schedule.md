@@ -12,7 +12,7 @@ tags:
   - Azure
   - Azure Policy
 ---
-I wrote an Azure Policy definition few days ago, it deploys VM shutdown schedule together with VMs using <strong>deployIfNotExists</strong> effect. You can find it at my Azure Policy GitHub repo: <a href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/deploy-vm-shutdown-schedule">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/deploy-vm-shutdown-schedule</a>. This policy will be very useful when managing non-production workload.
+I wrote an Azure Policy definition few days ago, it deploys VM shutdown schedule together with VMs using <strong>deployIfNotExists</strong> effect. You can find it at my Azure Policy GitHub repo: <a href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/deploy-vm-shutdown-schedule">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/deploy-vm-shutdown-schedule</a>. This policy will be very useful when managing non-production workload.
 
 Input parameters:
 

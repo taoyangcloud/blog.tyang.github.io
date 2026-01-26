@@ -15,11 +15,11 @@ Previously, I have published a blog post about [Azure Policies for Restricting S
 
 Since then, I have been asked to create another definition that works the opposite way, instead of creating a denied list, it's more practical to create an allowed list for the project I'm working on right now. As the result, I have create a policy definition that only allows an array of specific service tags in NSG rules.
 
-You can find the policy definition and the sample policy initiative in my [azurepolicy](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/allowed-service-tags-in-nsgs)
+You can find the policy definition and the sample policy initiative in my [azurepolicy](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/allowed-service-tags-in-nsgs)
 
 When using this Policy definition, you will need to specify the allowed list of service tags as well as the traffic direction (inbound or outbound). The logic is the same as the previous policy definitions, if it's inbound traffic, the policy will check the source service tag, if it's outbound traffic, the policy will check the destination service tag.
 
-Obviously, the requirements will be different between your network connectivity subscriptions and application landing zone subscriptions. You can assign the same [policy initiative](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/allowed-service-tags-in-nsgs/polset-nsg.json) with different parameters to different management groups or subscriptions to meet the different requirements.
+Obviously, the requirements will be different between your network connectivity subscriptions and application landing zone subscriptions. You can assign the same [policy initiative](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/allowed-service-tags-in-nsgs/polset-nsg.json) with different parameters to different management groups or subscriptions to meet the different requirements.
 
 For example, in my lab, I have assigned the policy initiative with the following parameters:
 

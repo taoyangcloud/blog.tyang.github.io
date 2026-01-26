@@ -28,7 +28,7 @@ After our holiday, I kept those servers running for a while. My friends from Aus
 
 Since Shadowsocks is very lightweight, and does not keep any persistent data. I thought it would be a very good candidate to be containerized so I can cut down the cost and just keep them running. I had some spare time over the last couple of weekends, and I’ve decided to try to hosted it on Azure Container Instance. After spending 2 Sunday afternoons, I managed to get it deployed and hosted on Azure Container Registry (ACR), Azure Container Instance (ACI) using Azure DevOps YAML pipelines. To be honest, I was surprised how easy it was to make the container image for it, only took me around 15 minutes to create it from scratch and have it fully tested and running on Docker running on my Mac Mini. Most of my time was spent on designing the YAML pipelines and have sufficient tests and scanning in place.
 
-I’m going to go through how I used YAML pipelines in Azure DevOps to deploy an Azure Container Registry, then building and pushing the docker image to ACR, and created 3 container instances in 3 different Azure regions to run this image. Although I am using 2 separate projects in Azure DevOps and all my code are stored on Azure Repo, I’ve made a copy of all the code I’ve developed and stored it on a public GitHub Repo here: <a href="https://github.com/tyconsulting/containers.patterns">https://github.com/tyconsulting/containers.patterns</a>
+I’m going to go through how I used YAML pipelines in Azure DevOps to deploy an Azure Container Registry, then building and pushing the docker image to ACR, and created 3 container instances in 3 different Azure regions to run this image. Although I am using 2 separate projects in Azure DevOps and all my code are stored on Azure Repo, I’ve made a copy of all the code I’ve developed and stored it on a public GitHub Repo here: <a href="https://github.com/TaoYang-cloud/containers.patterns">https://github.com/TaoYang-cloud/containers.patterns</a>
 
 **<span style="color: #ff0000;">NOTE:</span>** Before we continue, let me set this straight first. The purpose of this post is really to demonstrate and share my experience of deploying a simple containerized app to Azure using Azure Pipelines. Hosting Internet based proxy servers is legal. We are all law-abiding citizens, don’t hold me responsible for your inappropriate use of proxy servers.
 
@@ -41,7 +41,7 @@ I’m using several Azure DevOps extensions in my pipelines. If you don’t want
 
 ## Azure Container Registry Pipeline
 
-Firstly, I created a pipeline to deploy an container registry to host the docker image. The pattern is located in the <a href="https://github.com/tyconsulting/containers.patterns/tree/master/acr">acr folder</a> in the repo. The <a href="https://github.com/tyconsulting/containers.patterns/blob/master/acr/azure.pipelines.yaml">YAML pipeline</a> deploys an <a href="https://github.com/tyconsulting/containers.patterns/blob/master/acr/templates/azuredeploy.json">ARM template</a>, which contains an ACR and key vault (for storing ACR admin credential).
+Firstly, I created a pipeline to deploy an container registry to host the docker image. The pattern is located in the <a href="https://github.com/TaoYang-cloud/containers.patterns/tree/master/acr">acr folder</a> in the repo. The <a href="https://github.com/TaoYang-cloud/containers.patterns/blob/master/acr/azure.pipelines.yaml">YAML pipeline</a> deploys an <a href="https://github.com/TaoYang-cloud/containers.patterns/blob/master/acr/templates/azuredeploy.json">ARM template</a>, which contains an ACR and key vault (for storing ACR admin credential).
 
 This pipeline uses several service connections for connecting to my Azure subscriptions (one for Dev and one for Prod). I named these connections sub-workload-dev and sub-workload-prod. It also uses 2 variable groups called "variables – acr (dev)" and "variables – acr (prod)". the following variables are stored in these variable groups:
 
@@ -89,19 +89,19 @@ This pipeline is pretty straightforward, once completed, I’m ready to continue
 
 ## Docker Image
 
-As part of the ACI pipeline, the docker image is built, scanned and pushed to ACR from the <a href="https://github.com/tyconsulting/containers.patterns/blob/master/containers/shadowsocks/Dockerfile">Dockerfile</a> I’ve created. it basically performs the following steps:
+As part of the ACI pipeline, the docker image is built, scanned and pushed to ACR from the <a href="https://github.com/TaoYang-cloud/containers.patterns/blob/master/containers/shadowsocks/Dockerfile">Dockerfile</a> I’ve created. it basically performs the following steps:
 
 * use base image Ubuntu 18.04 and install shadowsocks-libev using apt-get
 * run apt-get upgrade
 * clean up
-* copy the shadowsocks config file <a href="https://github.com/tyconsulting/containers.patterns/blob/master/containers/shadowsocks/config.json">config.json</a> located in the same directory of the docker file to the image.
+* copy the shadowsocks config file <a href="https://github.com/TaoYang-cloud/containers.patterns/blob/master/containers/shadowsocks/config.json">config.json</a> located in the same directory of the docker file to the image.
 * configure the image to start shadowsocks-libev service when starts up
 
 The config file controls various settings such as port mapping, encryption method, and password when connecting to the shadowsocks server. I don’t really consider the password here a secret because it’s generic that everyone who connect to my instance would use. I’d put a very simple phrase here so it’s not too hard for people to enter when setting up profile on their client apps.
 
 ## Azure Container Instance Pipeline
 
-The ACI pattern is located in the <a href="https://github.com/tyconsulting/containers.patterns/tree/master/containers/shadowsocks">container/shadowsocks</a> folder of my GitHub repo. Similar to the ACR pipeline, I needed to create some variable groups, service connections and environments to support the ACI pipeline:
+The ACI pattern is located in the <a href="https://github.com/TaoYang-cloud/containers.patterns/tree/master/containers/shadowsocks">container/shadowsocks</a> folder of my GitHub repo. Similar to the ACR pipeline, I needed to create some variable groups, service connections and environments to support the ACI pipeline:
 
 **Service Connections:**
 

@@ -41,6 +41,6 @@ This module really simplified the testing and code validation process in my VSTS
 The PSPesterTest module has been published on PowerShell Gallery, and the source code is in GitHub:
 
 * PSGallery: <a title="https://www.powershellgallery.com/packages/PSPesterTest" href="https://www.powershellgallery.com/packages/PSPesterTest">https://www.powershellgallery.com/packages/PSPesterTest</a>
-* GitHub: <a title="https://github.com/tyconsulting/PSPesterTest-PSModule" href="https://github.com/tyconsulting/PSPesterTest-PSModule">https://github.com/tyconsulting/PSPesterTest-PSModule</a>
+* GitHub: <a title="https://github.com/TaoYang-cloud/PSPesterTest-PSModule" href="https://github.com/TaoYang-cloud/PSPesterTest-PSModule">https://github.com/TaoYang-cloud/PSPesterTest-PSModule</a>
 
 Both functions in this module is fully documented in the help file. You can use Get-Help cmdlet to access the help content.

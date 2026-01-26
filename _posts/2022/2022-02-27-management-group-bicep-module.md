@@ -21,9 +21,9 @@ Since tenant level deployments are possible now with ARM template / Bicep, I hav
 2. Configure default management group for new subscriptions([doc](https://docs.microsoft.com/en-au/azure/governance/management-groups/how-to/protect-resource-hierarchy#setting---default-management-group))
 3. Configure permissions for creating new management groups([doc](https://docs.microsoft.com/en-au/azure/governance/management-groups/how-to/protect-resource-hierarchy#setting---require-authorization))
 
-The module and the sample template can be found from my BlogPost GitHub repo **[HERE](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/management.group)**.
+The module and the sample template can be found from my BlogPost GitHub repo **[HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/management.group)**.
 
-Since there is a hard limit of maximum 6 tiers in the management group hierarchy (excluding the tenant root management group), I have coded the module to take each tier as an [optional parameter](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/management.group/module/managementGroupHierarchy.bicep#L3-L19) (```tier1MgmtGroups```...```tier6MgmtGroups```). Each parameter is an array of object that looks for the following properties:
+Since there is a hard limit of maximum 6 tiers in the management group hierarchy (excluding the tenant root management group), I have coded the module to take each tier as an [optional parameter](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/management.group/module/managementGroupHierarchy.bicep#L3-L19) (```tier1MgmtGroups```...```tier6MgmtGroups```). Each parameter is an array of object that looks for the following properties:
 
 * **id**: The Id / name of the Management Group
 * **displayName**: The display name of the Management Group

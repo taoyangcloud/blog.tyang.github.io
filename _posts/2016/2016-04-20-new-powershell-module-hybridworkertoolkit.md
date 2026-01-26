@@ -193,7 +193,7 @@ Type=Event Source=AzureAutomation?Job* EventLevelName=Error
 
 I have published this module on Github as well as PowerShell Gallery:
 
-GitHub Repository: <a title="https://github.com/tyconsulting/HybridWorkerToolkit" href="https://github.com/tyconsulting/HybridWorkerToolkit">https://github.com/tyconsulting/HybridWorkerToolkit</a>
+GitHub Repository: <a title="https://github.com/TaoYang-cloud/HybridWorkerToolkit" href="https://github.com/TaoYang-cloud/HybridWorkerToolkit">https://github.com/TaoYang-cloud/HybridWorkerToolkit</a>
 
 PowerShell Gallery:  <a title="http://www.powershellgallery.com/packages/HybridWorkerToolkit/1.0.1" href="http://www.powershellgallery.com/packages/HybridWorkerToolkit/1.0.3">http://www.powershellgallery.com/packages/HybridWorkerToolkit/1.0.3</a>
 

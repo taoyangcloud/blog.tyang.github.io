@@ -33,7 +33,7 @@ I got pretty excited when I saw these APIs, and also surprised they are not offe
 
 I have spent some time playing with these APIs today and managed to create a PowerShell Function that can help people invoking these APIs.
 
-You can find my PowerShell function `Get-AzPolicyRestriction` at my `BlogPost` GitHub repo [HERE](https://github.com/tyconsulting/BlogPosts/blob/master/Scripts/Azure/AzPolicyRestriction.ps1).
+You can find my PowerShell function `Get-AzPolicyRestriction` at my `BlogPost` GitHub repo [HERE](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Scripts/Azure/AzPolicyRestriction.ps1).
 
 Based on What I was able to find by testing, you can pass the following of parameters via the request body:
 
