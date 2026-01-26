@@ -48,4 +48,4 @@ resources
 
 ![1](../../../../assets/images/2021/12/image13.png)
 
-This query is also stored in my [Azure Resource Graph GitHub repo](https://github.com/tyconsulting/AzureResourceGraph) ([HERE](https://github.com/tyconsulting/AzureResourceGraph/blob/master/Queries/Network.md#list-all-inbound-and-outbound-nsg-rules))
+This query is also stored in my [Azure Resource Graph GitHub repo](https://github.com/TaoYang-cloud/AzureResourceGraph) ([HERE](https://github.com/TaoYang-cloud/AzureResourceGraph/blob/master/Queries/Network.md#list-all-inbound-and-outbound-nsg-rules))

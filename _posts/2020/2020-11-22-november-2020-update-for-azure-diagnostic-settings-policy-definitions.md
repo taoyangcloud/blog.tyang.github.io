@@ -14,7 +14,7 @@ tags:
   - Azure
   - Azure Policy
 ---
-Last month, I released some updates to the <a href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings">Azure Policy definitions for Diagnostics Settings</a>. After that update, there was a requirement for me to revisit and revalidate all existing policy definitions, so I have spent few days and have gone through them all, making sure they are still up-to-date. I have also added few definitions for few additional Azure services.
+Last month, I released some updates to the <a href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings">Azure Policy definitions for Diagnostics Settings</a>. After that update, there was a requirement for me to revisit and revalidate all existing policy definitions, so I have spent few days and have gone through them all, making sure they are still up-to-date. I have also added few definitions for few additional Azure services.
 
 Here’s a the change log:
 

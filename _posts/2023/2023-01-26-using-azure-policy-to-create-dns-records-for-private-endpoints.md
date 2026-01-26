@@ -35,7 +35,7 @@ I have created few sample policies for the following Azure PaaS services:
 * Azure Storage Account File Service
 * Azure Recovery Services Vault (Backup)
 
-You can find them in my [Azure Policy Github repo](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/private-endpoints-dns-registration)
+You can find them in my [Azure Policy Github repo](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/private-endpoints-dns-registration)
 
 If you need to create a new policy definition for a service (for example Azure DataLake v2), other than the policy definition name and parameter display names, the only thing you need to modify is the following line:
 
@@ -47,7 +47,7 @@ When assigning the policy, you will need to provide the resource Id of the Priva
 
 For most of the Azure services, one private endpoint requires only one private IP address and one DNS record on one private DNS zone, however, some resources require multiple private IP addresses and DNS records on multiple Private DNZ zones (i.e. Azure Cosmos DB, Azure Kubernetes Services, Azure Backup on Recovery Services Vault, etc.). For these resources, the policy definitions are more complicated. I will not be able to cover them all here in this post.
 
-Since I have already developed a policy definition for Azure Backup on Recovery Services Vault, I have included it in above mentioned GitHub repo (direct link [HERE](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/private-endpoints-dns-registration/pol-deploy-rsv-backup-pe-dns-records.json)). With Azure Backup, you will need to create DNS records on Azure Storage blob service and queue service, as well as the **region-specific** DNS zone for Azure backup.
+Since I have already developed a policy definition for Azure Backup on Recovery Services Vault, I have included it in above mentioned GitHub repo (direct link [HERE](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/private-endpoints-dns-registration/pol-deploy-rsv-backup-pe-dns-records.json)). With Azure Backup, you will need to create DNS records on Azure Storage blob service and queue service, as well as the **region-specific** DNS zone for Azure backup.
 
 >**NOTE**: Azure Backup also creates additional DNS records and private IP addresses on-demand, you will also need to enable System Assigned Managed Identity for the RSV and assign permission to the RSV resource group as well as the VNet where the private endpoints are connected to. This requirement is documented [HERE](https://learn.microsoft.com/en-us/azure/backup/private-endpoints).
 

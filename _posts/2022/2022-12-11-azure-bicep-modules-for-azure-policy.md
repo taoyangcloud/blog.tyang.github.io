@@ -16,11 +16,11 @@ tags:
 
 Although I'm a big fan of Microsoft [CARML](https://aka.ms/carml) Bicep module repo, and have used many of their modules in my projects, Sometimes I still prefer using the modules I have created myself. I created 3 Bicep modules a while back for Azure Policy Definitions, Initiatives and Assignments. They are all created for management-group scoped deployments because I have not had requirements for subscription scoped deployments to date. I have used these modules in several projects now. I thought I'd share with the community, gives you an alternative to the CARML modules.
 
-You can find the modules coupled with sample templates in my [Azure Policy Github repository](https://github.com/tyconsulting/azurepolicy/tree/master/bicep)
+You can find the modules coupled with sample templates in my [Azure Policy Github repository](https://github.com/TaoYang-cloud/azurepolicy/tree/master/bicep)
 
 ## Policy Definition Module
 
-Azure policy definitions are written in JSON format. With the [Policy Definition module](https://github.com/tyconsulting/azurepolicy/tree/master/bicep/modules/policyDefinitions) takes a JSON payload as an input and parses it to get all attributes that Bicep requires. When deploying multiple policy definitions in bulk, you can also use the `@batchsize` decorator to control the concurrent deployments. I was able to use this module to deploy 100+ policy definitions in a single deployment in a timely manner.
+Azure policy definitions are written in JSON format. With the [Policy Definition module](https://github.com/TaoYang-cloud/azurepolicy/tree/master/bicep/modules/policyDefinitions) takes a JSON payload as an input and parses it to get all attributes that Bicep requires. When deploying multiple policy definitions in bulk, you can also use the `@batchsize` decorator to control the concurrent deployments. I was able to use this module to deploy 100+ policy definitions in a single deployment in a timely manner.
 
 For example:
 
@@ -53,11 +53,11 @@ output policies array = [for (definition, i) in PolicyDefinitions: {
 
 ```
 
->**NOTE**: This sample template above is located [here](https://github.com/tyconsulting/azurepolicy/tree/master/bicep/templates/policyDefinitions)
+>**NOTE**: This sample template above is located [here](https://github.com/TaoYang-cloud/azurepolicy/tree/master/bicep/templates/policyDefinitions)
 
 ## Policy Initiative (Policy Set) Module
 
-Similar to the Policy Definition module, the [Policy Initiative module](https://github.com/tyconsulting/azurepolicy/tree/master/bicep/modules/policySetDefinitions) can be used together with the `loadTextContent()` bicep function so you can easily deploy existing Policy initiative definition JSON files.
+Similar to the Policy Definition module, the [Policy Initiative module](https://github.com/TaoYang-cloud/azurepolicy/tree/master/bicep/modules/policySetDefinitions) can be used together with the `loadTextContent()` bicep function so you can easily deploy existing Policy initiative definition JSON files.
 
 For example:
 
@@ -105,7 +105,7 @@ output tagPolicySetDefinition object = tagPolicySetDefinition
 
 ```
 
-In this example, I'm deploying a policy initiative defined in the [`polset-tags.json`](https://github.com/tyconsulting/azurepolicy/blob/master/bicep/templates/policySetDefinitions/polset-tags.json) file. The `loadTextContent()` function is used to read the JSON file.
+In this example, I'm deploying a policy initiative defined in the [`polset-tags.json`](https://github.com/TaoYang-cloud/azurepolicy/blob/master/bicep/templates/policySetDefinitions/polset-tags.json) file. The `loadTextContent()` function is used to read the JSON file.
 
 In the Policy Initiative definition JSON file, I have defined the member policy location as below:
 
@@ -113,11 +113,11 @@ In the Policy Initiative definition JSON file, I have defined the member policy 
 
 The Bicep template uses the `replace()` function to replace the `{policyLocationResourceId}` placeholder with the management group Id (in this example, assuming the member policies are located at the same management group as the policy initiative).
 
->**NOTE**: The sample template above is located [here](https://github.com/tyconsulting/azurepolicy/blob/master/bicep/templates/policySetDefinitions/main.bicep)
+>**NOTE**: The sample template above is located [here](https://github.com/TaoYang-cloud/azurepolicy/blob/master/bicep/templates/policySetDefinitions/main.bicep)
 
 ## Policy Assignment Module
 
-The [policy assignment module](https://github.com/tyconsulting/azurepolicy/tree/master/bicep/templates/PolicyAssignments) is used to assign policy definitions or policy initiatives to a management group scope. It can also create role assignments for Policy Assignments Managed Identity, which is required for policies with `DeployIfNotExists` and `Modify` effects.
+The [policy assignment module](https://github.com/TaoYang-cloud/azurepolicy/tree/master/bicep/templates/PolicyAssignments) is used to assign policy definitions or policy initiatives to a management group scope. It can also create role assignments for Policy Assignments Managed Identity, which is required for policies with `DeployIfNotExists` and `Modify` effects.
 
 For example:
 
@@ -207,7 +207,7 @@ output tagAssignmentResourceId string = tagAssignment.outputs.resourceId
 
 This sample bicep template requires parameter inputs, which can be defined in a parameter file. It adds the `assignedBy` metadata to existing assignment metadata, and similar to the Policy Initiative sample, it replaces the `{policyLocationResourceId}` token with the `definitionSourceManagementGroupId` parameter.
 
->**NOTE**: The sample template above is located [here](https://github.com/tyconsulting/azurepolicy/blob/master/bicep/templates/PolicyAssignments/main.bicep)
+>**NOTE**: The sample template above is located [here](https://github.com/TaoYang-cloud/azurepolicy/blob/master/bicep/templates/PolicyAssignments/main.bicep)
 
 ## Conclusion
 

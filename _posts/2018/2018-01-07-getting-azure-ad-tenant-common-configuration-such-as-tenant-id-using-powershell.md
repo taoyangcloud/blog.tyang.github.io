@@ -22,7 +22,7 @@ Basically, there’s an open REST endpoint you can hit to get the AAD tenant inf
 
 https://login.windows.net/**\<Tenant Id or Tenant Name\>**/.well-known/openid-configuration
 
-I have wrapped this into a [PowerShell function](https://gist.github.com/tyconsulting/7c313dc98947f0e413cf69b0b2321013):
+I have wrapped this into a [PowerShell function](https://gist.github.com/TaoYang-cloud/7c313dc98947f0e413cf69b0b2321013):
 
 ```powershell
 Function Get-AADTenantConfiguration
@@ -32,12 +32,12 @@ Function Get-AADTenantConfiguration
   PARAM (
     [Parameter(ParameterSetName = 'ByTenantId', Position=0,Mandatory=$true)]
     [ValidateScript({
-      try 
+      try
       {
         [System.Guid]::Parse($_) | Out-Null
         $true
-      } 
-      catch 
+      }
+      catch
       {
         $false
       }
@@ -50,7 +50,7 @@ Function Get-AADTenantConfiguration
     [String]
     $TenantName
   )
-  
+
   if ($PScmdlet.ParameterSetName -eq 'ByTenantId')
   {
     $URI = "https://login.windows.net/$TenantId/.well-known/openid-configuration"

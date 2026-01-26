@@ -14,7 +14,7 @@ tags:
 
 ## Introduction
 
-Most of my work over the last couple of years has been focused on Azure Bicep and more specifically, [CARML](https://aka.ms/carml)(Common Azure Resource Modules Library). I have presented this topic in various occasions (i.e. on the [AzureTar's YouTube Channel](https://blog.tyang.org/2023/07/11/azuretar-carml-series/), and at [Experts Live Australia 2023](https://github.com/tyconsulting/ExpertsLiveAU2023-CARML)). I have also made several contributions to the CARML project.
+Most of my work over the last couple of years has been focused on Azure Bicep and more specifically, [CARML](https://aka.ms/carml)(Common Azure Resource Modules Library). I have presented this topic in various occasions (i.e. on the [AzureTar's YouTube Channel](https://blog.tyang.org/2023/07/11/azuretar-carml-series/), and at [Experts Live Australia 2023](https://github.com/TaoYang-cloud/ExpertsLiveAU2023-CARML)). I have also made several contributions to the CARML project.
 
 In the YouTube videos and the Experts Live talk, I have teamed up with Ahmad Abdalla ([@ahmadkabdalla](https://twitter.com/ahmadkabdalla)) and Jorge Arteiro ([@JorgeArteiro](https://twitter.com/JorgeArteiro)) and covered the concept and benefits of developing your own "overlay" Bicep modules based on CARML modules.
 
@@ -110,7 +110,7 @@ As you can see, I have consolidated several parameters:
 
 All of these consolidated parameters are arrays, so you can specify one or more values for each parameter. THe module will then determine the correct parameter to use based on the input.
 
-The module can be found in my GitHub repo [HERE](https://github.com/tyconsulting/BlogPosts/tree/master/BicepModules/network-security-group).
+The module can be found in my GitHub repo [HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/BicepModules/network-security-group).
 
 ## Conclusion
 

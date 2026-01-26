@@ -62,8 +62,8 @@ So, in summary, here’s what’s changed:
 I have updated the original link, so you can download this updated version from:
 
 * [PowerShell Gallery](https://www.powershellgallery.com/packages/OpsMgrExtended)
-* [GitHub](https://github.com/tyconsulting/OpsMgrExtended-PS-Module)
-  
+* [GitHub](https://github.com/TaoYang-cloud/OpsMgrExtended-PS-Module)
+
 ## Conclusion
 
 Now that I’ve updated and enhanced the New-OMRule function I will demonstrate how to create rules using this function as planned in the next module.

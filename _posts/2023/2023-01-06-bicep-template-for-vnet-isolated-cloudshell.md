@@ -22,7 +22,7 @@ Few months ago, I bumped into a blog post from Thomas Maurer [Connect Azure Clou
 
 I gave it a try, but I felt the [documentation](https://learn.microsoft.com/en-us/azure/cloud-shell/private-vnet) was not very clear to me, the sample code provided by Microsoft does not satisfy many security requirements from my customer (and also written in ARM, not Bicep). So I ended up spent few days trying to figure out how to deploy this solution in a more secured way. I finally managed to create a Bicep template for this solution, and I'm sharing it here.
 
-You can find my Bicep template in my [GitHub repo](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/vnet-isolated-cloud-shell)
+You can find my Bicep template in my [GitHub repo](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/vnet-isolated-cloud-shell)
 
 In my environment, I have a hub-spoke network, I have deployed the CloudShell in the hub network, and I have a few spokes networks, I am able to connect to the resources connected to the spoke networks via their Private Endpoints using the Cloud Shell from the hub network.
 

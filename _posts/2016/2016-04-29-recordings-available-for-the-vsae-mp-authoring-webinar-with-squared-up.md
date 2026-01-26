@@ -27,4 +27,4 @@ Second Session: <a href="https://www.youtube.com/watch?v=Xu3yRE770QA">https://ww
 
 Lastly, the workshop guide, slide deck and the sample VSAE project is also available on GitHub:
 
-<a title="https://github.com/tyconsulting/SquaredUp-VSAE-Workshop" href="https://github.com/tyconsulting/SquaredUp-VSAE-Workshop">https://github.com/tyconsulting/SquaredUp-VSAE-Workshop</a>
+<a title="https://github.com/TaoYang-cloud/SquaredUp-VSAE-Workshop" href="https://github.com/TaoYang-cloud/SquaredUp-VSAE-Workshop">https://github.com/TaoYang-cloud/SquaredUp-VSAE-Workshop</a>

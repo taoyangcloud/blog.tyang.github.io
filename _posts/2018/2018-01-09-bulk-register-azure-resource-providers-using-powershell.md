@@ -16,13 +16,13 @@ tags:
 
 Azure Resource Providers registration dictates what types of resources you allow users to provision within your Azure subscription. Although by default, some resource providers are automatically registered, the user must have required permission to register resource providers (<a title="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-supported-services" href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-supported-services">https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-supported-services</a>). I had to create a script to bulk-register resource providers for a subscription because normal users have not been given the permissions to do so.
 
-In the following [sample script](https://gist.github.com/tyconsulting/30bf4907dbaa6391ac607e69bb43475f), I am using regular expressions to match the resource provider names, and it is registering all Microsoft resource providers except for the classic (ASM) resource types.
+In the following [sample script](https://gist.github.com/TaoYang-cloud/30bf4907dbaa6391ac607e69bb43475f), I am using regular expressions to match the resource provider names, and it is registering all Microsoft resource providers except for the classic (ASM) resource types.
 
 ```powershell
 #Requires -Modules AzureServicePrincipalAccount, AzureRM.Profile
 <#
 =======================================
-AUTHOR:  Tao Yang 
+AUTHOR:  Tao Yang
 DATE:    15/12/2017
 Version: 0.1
 Comment: register Azure Resource Providers
@@ -38,12 +38,12 @@ PARAM (
   [Parameter(ParameterSetName='ByCred', Mandatory=$true)]
   [Parameter(ParameterSetName='ByInteractiveSignIn', Mandatory=$true)]
   [ValidateScript({
-    try 
+    try
     {
       [System.Guid]::Parse($_) | Out-Null
       $true
-    } 
-    catch 
+    }
+    catch
     {
       $false
     }
@@ -53,12 +53,12 @@ PARAM (
   [Parameter(ParameterSetName='ByCred', Mandatory=$true)]
   [Parameter(ParameterSetName='ByInteractiveSignIn', Mandatory=$true)]
   [ValidateScript({
-    try 
+    try
     {
       [System.Guid]::Parse($_) | Out-Null
       $true
-    } 
-    catch 
+    }
+    catch
     {
       $false
     }
@@ -105,7 +105,7 @@ Function Register-ResourceProvider
     $Registered = $false
     Trow $_.Exception
   }
-  
+
   If ($Response.StatusCode -ge 200 -and $Response.StatusCode -le 299)
   {
     $Registered = $true

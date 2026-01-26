@@ -30,6 +30,6 @@ Additionally, I have made few additional stability improvements, and added depen
 
 This updated version can be found on both GitHub and PowerShell Gallery:
 
-Github: <a title="https://github.com/tyconsulting/PowerShellPackageManagementDSCResource/releases/tag/1.0.1.0" href="https://github.com/tyconsulting/PowerShellPackageManagementDSCResource/releases/tag/1.0.1.0">https://github.com/tyconsulting/PowerShellPackageManagementDSCResource/releases/tag/1.0.1.0</a>
+Github: <a title="https://github.com/TaoYang-cloud/PowerShellPackageManagementDSCResource/releases/tag/1.0.1.0" href="https://github.com/TaoYang-cloud/PowerShellPackageManagementDSCResource/releases/tag/1.0.1.0">https://github.com/TaoYang-cloud/PowerShellPackageManagementDSCResource/releases/tag/1.0.1.0</a>
 
 PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/cPowerShellPackageManagement/1.0.1.0" href="https://www.powershellgallery.com/packages/cPowerShellPackageManagement/1.0.1.0">https://www.powershellgallery.com/packages/cPowerShellPackageManagement/1.0.1.0</a>

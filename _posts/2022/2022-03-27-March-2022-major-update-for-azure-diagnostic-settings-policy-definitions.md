@@ -11,9 +11,9 @@ tags:
   - Azure Policy
 ---
 
-I haven't revisited the [Resource Diagnostics Settings policy definitions](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings) since October 2020. A lot has changed since then. An update is long-overdue.
+I haven't revisited the [Resource Diagnostics Settings policy definitions](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings) since October 2020. A lot has changed since then. An update is long-overdue.
 
-I have updated this set of policy definitions in my [azurepolicy](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings) GitHub repo.
+I have updated this set of policy definitions in my [azurepolicy](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings) GitHub repo.
 
 Here's the **Change Log**:
 

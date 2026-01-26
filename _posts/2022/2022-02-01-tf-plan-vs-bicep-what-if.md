@@ -28,7 +28,7 @@ It is hard to say which one is better between `terraform plan' and ARM What-If. 
 * [Use of Module Outputs](#use-of-module-outputs)
 * [Parsing Outputs](#parsing-outputs)
 
->**NOTE:** All the sample Bicep and Terraform templates I have used in this blog post can be found on my GitHub repository [**HERE**](https://github.com/tyconsulting/tf.vs.bicep).
+>**NOTE:** All the sample Bicep and Terraform templates I have used in this blog post can be found on my GitHub repository [**HERE**](https://github.com/TaoYang-cloud/tf.vs.bicep).
 
 The following tools and software are used. All of these should be at the latest version at the time writing this article:
 
@@ -48,13 +48,13 @@ The following tools and software are used. All of these should be at the latest 
 | Terraform | No |
 | Bicep and ARM What-If | Yes |
 
-**[Sample templates](https://github.com/tyconsulting/tf.vs.bicep/tree/master/Storage-Account)**
+**[Sample templates](https://github.com/TaoYang-cloud/tf.vs.bicep/tree/master/Storage-Account)**
 
 Azure Policy has the ability to audit, modify or block your deployments. During the template development and testing phase, it is very important that we understand if the resources we are deploying are compliant with the Policies assigned to the target environment. `terraform plan` does not evaluate Azure Policy assignments on the target environments.
 
 On the other hand, ARM What-If does. Although it does not support all the [Azure Policy effects](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects), the [**Deny**](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects#deny) effect is supported - which is the most critical one when we are evaluating the templates.
 
-To test, I have created a policy assignment that blocks storage accounts from being created if its Service Endpoint is not enabled. The poilcy definition can be found [HERE](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount).
+To test, I have created a policy assignment that blocks storage accounts from being created if its Service Endpoint is not enabled. The poilcy definition can be found [HERE](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/restrict-public-storageAccount).
 
 When I ran `terraform plan`, the result indicates a storage account and a blob container will be created successfully:
 
@@ -71,7 +71,7 @@ When I invoked ARM What-If against the Bicep template using `az deployment group
 | Terraform | No |
 | Bicep and ARM What-If | Yes |
 
-**[Sample templates](https://github.com/tyconsulting/tf.vs.bicep/tree/master/Public-IP)**
+**[Sample templates](https://github.com/TaoYang-cloud/tf.vs.bicep/tree/master/Public-IP)**
 
 In a previous engagement, it occurred to me several times that a production deployment with Terraform failed because the subscription quotas have been reached. i.e. the number of CPU cores for a particular VM family reached the limit for the subscription we use. To raise the the limit, we would have manually raise the request via the portal and normally the turn around is few hours (if we are lucky). This had a great impact with the original change window that we had planned. I have developed a habit to check the quota before the change start date, to ensure the deployment would not be blocked by the quota. This could be easily avoided if `terraform plan` checks the subscription quotas.
 
@@ -98,7 +98,7 @@ In the past when we create Azure landing zones, NSG rules can be very complicate
 | Terraform | No |
 | Bicep and ARM What-If | No |
 
-**[Sample templates](https://github.com/tyconsulting/tf.vs.bicep/tree/master/NSG-Rules-Overlapping-IPs)**
+**[Sample templates](https://github.com/TaoYang-cloud/tf.vs.bicep/tree/master/NSG-Rules-Overlapping-IPs)**
 
 To test, I have 2 CIDR ranges in as the source addresses, where the 2nd range "10.1.0.0/16" is already included in the first range "10.0.0.0/8". This deployment will fail but both `terraform plan` and ARM What-If ran successfully without errors:
 
@@ -117,7 +117,7 @@ Bicep What-If:
 | Terraform | No |
 | Bicep and ARM What-If | No |
 
-**[Sample templates](https://github.com/tyconsulting/tf.vs.bicep/tree/master/NSG-Rules-Duplicate-Priority)**
+**[Sample templates](https://github.com/TaoYang-cloud/tf.vs.bicep/tree/master/NSG-Rules-Duplicate-Priority)**
 
 To test, I have defined 2 inbound rules defined with same priority number. The deployments will fail but both `terraform plan` and ARM What-If ran successfully without errors:
 
@@ -136,7 +136,7 @@ Bicep What-If:
 | Terraform | Yes |
 | Bicep and ARM What-If | No |
 
-**[Sample templates](https://github.com/tyconsulting/tf.vs.bicep/tree/master/Storage-Account)**
+**[Sample templates](https://github.com/TaoYang-cloud/tf.vs.bicep/tree/master/Storage-Account)**
 
 Recently, I noticed a strange behavior that the What-If result does not list all the resources to be created by my Bicep template. I have spent few hours and managed to narrow down the issue, and I was able to reproduce this in a brand new Bicep template.
 

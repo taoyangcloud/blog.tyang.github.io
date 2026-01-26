@@ -201,7 +201,7 @@ In this example, I’ve specified a particular module can be installed at any ti
 
 This DSC Resource has been published to PowerShellGallery: <a title="https://www.powershellgallery.com/packages/cPowerShellPackageManagement" href="https://www.powershellgallery.com/packages/cPowerShellPackageManagement">https://www.powershellgallery.com/packages/cPowerShellPackageManagement</a>
 
-The project is also located on Github: <a title="https://github.com/tyconsulting/PowerShellPackageManagementDSCResource" href="https://github.com/tyconsulting/PowerShellPackageManagementDSCResource">https://github.com/tyconsulting/PowerShellPackageManagementDSCResource</a>
+The project is also located on Github: <a title="https://github.com/TaoYang-cloud/PowerShellPackageManagementDSCResource" href="https://github.com/TaoYang-cloud/PowerShellPackageManagementDSCResource">https://github.com/TaoYang-cloud/PowerShellPackageManagementDSCResource</a>
 
 ## Special Thanks
 

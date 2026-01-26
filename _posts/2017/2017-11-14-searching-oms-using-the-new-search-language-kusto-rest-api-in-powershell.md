@@ -28,14 +28,14 @@ I have contacted the OMS product group and I have been advised that since the sa
 
 Previously with the old language, we also had similar limitations, and I have blogged ways to overcome the throttling limitations using ‘skip’ command. You can find my previous blog post here: <a title="https://blog.tyang.org/2017/04/25/programmatically-performing-oms-log-search-against-a-large-result-set/" href="https://blog.tyang.org/2017/04/25/programmatically-performing-oms-log-search-against-a-large-result-set/">https://blog.tyang.org/2017/04/25/programmatically-performing-oms-log-search-against-a-large-result-set/</a>. However, the new Kusto language does not have a ‘skip’ or equivalent command so it was not possible to use the same method when querying against a large result set. Luckily with the help from the OMS product group, I managed to get it working using the **row_number()** function, and developed a script directly invoking the new Log Analytics search REST API (instead of going through ARM).
 
-Here’s the [PowerShell script](https://gist.github.com/tyconsulting/bf9b0cfc894125777f6bc912a3002a25) I developed, in order to run it, in addition to the AzureRM.Profile and AzureRM.Resources module, you will also need the <a href="https://www.powershellgallery.com/packages/AzureServicePrincipalAccount/">AzureServicePrincipalAccount PowerShell module</a> v1.2.0 or above (developed by myself) :
+Here’s the [PowerShell script](https://gist.github.com/TaoYang-cloud/bf9b0cfc894125777f6bc912a3002a25) I developed, in order to run it, in addition to the AzureRM.Profile and AzureRM.Resources module, you will also need the <a href="https://www.powershellgallery.com/packages/AzureServicePrincipalAccount/">AzureServicePrincipalAccount PowerShell module</a> v1.2.0 or above (developed by myself) :
 
 ```powershell
 #Requires -Version 5.0
 #Requires -Modules AzureRM.Resources, AzureRM.Profile, AzureServicePrincipalAccount
 <#
   =================================================================================
-  AUTHOR:  Tao Yang 
+  AUTHOR:  Tao Yang
   DATE:    14/11/2017
   Version: 0.1
   Comment: Export OMS logs from an updated workspace (using Kusto language and API)
@@ -162,7 +162,7 @@ Function Invoke-OMSKustoSearch
 
   #Invoke search REST request
   $SearchRequest = Invoke-WebRequest -UseBasicParsing -Uri $OMSAPISearchURI -Headers $RequestHeader -Body $RequestBodyJSON -Method Post -Verbose
-  
+
   #process result
   Write-Verbose "Parsing Log Analytics Query REST API Results."
   $arrSearchResults += ConvertFrom-LogAnalyticsJson $SearchRequest.Content
@@ -176,13 +176,13 @@ Function Invoke-OMSKustoSearch
     Write-Verbose " - Error Message: $($objResponse.error.message)"
     Write-Verbose " - Inner Error code: $($objResponse.error.details.innererror.code)"
     Write-Verbose " - Inner Error Message: $($objResponse.error.details.innererror.message)"
-    
+
     $iRepeat = 0
     If ($objresponse.error.code -ieq 'partialerror')
     {
       $iRepeat ++
       Write-Verbose "Partial Error occurred, subsequent queries required. Repeat count: $iRepeat."
-      
+
       $bQueryCompleted = $false
       Do
       {
@@ -202,7 +202,7 @@ Function Invoke-OMSKustoSearch
 
         #Invoke search REST request
         $SubsequentSearchRequest = Invoke-WebRequest -UseBasicParsing -Uri $OMSAPISearchURI -Headers $RequestHeader -Body $SubsequentRequestBodyJSON -Method Post
-  
+
         #process result
         Write-Verbose "Parsing Log Analytics Query REST API Results."
         $arrSearchResults += ConvertFrom-LogAnalyticsJson $SubsequentSearchRequest.Content
@@ -263,7 +263,7 @@ Function Export-ResultToFile
 {
   [CmdletBinding()]
   Param (
-    
+
     [Parameter(Mandatory = $true)][psobject[]]$Logs,
     [Parameter(Mandatory = $true)][ValidateScript({Test-Path $_})][string]$OutputDir,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$FileName,
@@ -315,13 +315,13 @@ $iExportCount = 0
 $totalExported = 0
 $arrExportFiles = @()
 Do {
-  
-  $ExportSet = $searchresult | Select-Object -First $MaximumRowPerFile -Skip ($MaximumRowPerFile * $iExportCount) 
+
+  $ExportSet = $searchresult | Select-Object -First $MaximumRowPerFile -Skip ($MaximumRowPerFile * $iExportCount)
   $iExportCount ++
 
   #Export Log
-  $FileName = "$OutputFileNamePrefix-$($ISO8601TimeSpan.replace(':', '.').split('Z/')[0])`-$iExportCount`.$OutputFormat" 
-  
+  $FileName = "$OutputFileNamePrefix-$($ISO8601TimeSpan.replace(':', '.').split('Z/')[0])`-$iExportCount`.$OutputFormat"
+
   Write-output "Exporting Batch No. $iExportCount with $($ExportSet.count) rows to '$FileName'"
   $arrExportFiles += Export-ResultToFile -Logs $ExportSet -OutputDir $OutputDir -FileName $FileName -OutputFormat $OutputFormat -Verbose
 

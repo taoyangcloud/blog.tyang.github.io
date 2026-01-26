@@ -35,7 +35,7 @@ They asked me to put everything in a public GitHub repository and also include t
 
 Regardless if this demo app is going to make to the Azure Functions gallery or not, I think it’s a pretty cool solution and I’ve decided to publicize it here.  So here’s the Repo:
 
-<a title="https://github.com/tyconsulting/AzureFunctionVotingAppDemo" href="https://github.com/tyconsulting/AzureFunctionVotingAppDemo"><span style="font-size: large;"><strong>https://github.com/tyconsulting/AzureFunctionVotingAppDemo</strong></span></a>
+<a title="https://github.com/TaoYang-cloud/AzureFunctionVotingAppDemo" href="https://github.com/TaoYang-cloud/AzureFunctionVotingAppDemo"><span style="font-size: large;"><strong>https://github.com/TaoYang-cloud/AzureFunctionVotingAppDemo</strong></span></a>
 
 You will find all the deployment artefacts in this demo, as well as a detailed instruction in README.md. The QR codes and sample Power BI report are all actively running in my Azure and O365 subscription. Feel free to try it out!
 

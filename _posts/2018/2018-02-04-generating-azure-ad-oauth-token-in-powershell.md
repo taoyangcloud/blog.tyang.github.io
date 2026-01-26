@@ -29,12 +29,12 @@ There are so many scenarios and variations when trying to generate the token, an
 * oAuth token used to access ARM REST API resource endpoints (<a href="https://management.azure.com">https://management.azure.com</a>)
 * oAuth token used to access other resource endpoints (i.e. key vault endpoints <a href="https://vault.azure.net">https://vault.azure.net</a>, or Microsoft Graph API)
 
-I began my work by starting creating a PowerShell module that defines an Azure Automation connection type for key-based service principals and provided functions that allows users to generate Azure AD oAuth tokens using either user principals or service principals. I named this module <a href="https://github.com/tyconsulting/AzureServicePrincipalAccount-PS" target="_blank" rel="noopener">AzureServicePrincipalAccount</a> because initially the only intention was to create an Azure Automation connection object for the key-based service principals. I then expanded the scope to providing the ability to generate oAuth tokens.
+I began my work by starting creating a PowerShell module that defines an Azure Automation connection type for key-based service principals and provided functions that allows users to generate Azure AD oAuth tokens using either user principals or service principals. I named this module <a href="https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS" target="_blank" rel="noopener">AzureServicePrincipalAccount</a> because initially the only intention was to create an Azure Automation connection object for the key-based service principals. I then expanded the scope to providing the ability to generate oAuth tokens.
 
 You can find this module in PowerShell Gallery and GitHub:
 
 * PS Gallery: <a title="https://www.powershellgallery.com/packages/AzureServicePrincipalAccount" href="https://www.powershellgallery.com/packages/AzureServicePrincipalAccount">https://www.powershellgallery.com/packages/AzureServicePrincipalAccount</a>
-* GitHub: <a title="https://github.com/tyconsulting/AzureServicePrincipalAccount-PS" href="https://github.com/tyconsulting/AzureServicePrincipalAccount-PS">https://github.com/tyconsulting/AzureServicePrincipalAccount-PS</a>
+* GitHub: <a title="https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS" href="https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS">https://github.com/TaoYang-cloud/AzureServicePrincipalAccount-PS</a>
 
 With this module, you can generate oAuth token for ARM REST API (default) or any other resource (with different API endpoints) supported by Azure AD (such as key vault, Graph API, etc.) using any of the following scenarios:
 

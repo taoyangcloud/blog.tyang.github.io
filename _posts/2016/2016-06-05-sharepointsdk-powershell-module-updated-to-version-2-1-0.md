@@ -15,7 +15,7 @@ tags:
 OK, this blog has been very quiet recently. Due to some work related requirements, I had to pass few Microsoft exams. so I have spent most of my time over the last couple of months on study. Firstly, I passed the MCSE Private Cloud Re-Certification exam, then I passed the 2 Azure exams: 70-532 Developing Microsoft Azure Solutions and <em>70-533 Implementing Microsoft Azure Infrastructure Solutions</em>. Other than studying and taking exams, I have also been working on a new version of the SharePointSDK PowerShell module during my spare time. I have finished everything on my to-do list for this release last night, and I’ve just published version 2.1.0 on PowerShell Gallery and GitHub:
 
  * PowerShellGallery: <a title="https://www.powershellgallery.com/packages/SharePointSDK/2.1.0" href="https://www.powershellgallery.com/packages/SharePointSDK/2.1.0">https://www.powershellgallery.com/packages/SharePointSDK/2.1.0</a>
- * Github: <a title="https://github.com/tyconsulting/SharePointSDK_PowerShellModule" href="https://github.com/tyconsulting/SharePointSDK_PowerShellModule">https://github.com/tyconsulting/SharePointSDK_PowerShellModule</a>
+ * Github: <a title="https://github.com/TaoYang-cloud/SharePointSDK_PowerShellModule" href="https://github.com/TaoYang-cloud/SharePointSDK_PowerShellModule">https://github.com/TaoYang-cloud/SharePointSDK_PowerShellModule</a>
 
 This new release includes the following updates:
 

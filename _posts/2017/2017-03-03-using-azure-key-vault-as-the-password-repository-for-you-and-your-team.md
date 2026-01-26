@@ -14,7 +14,7 @@ tags:
   - Azure Key Vault
   - PowerShell
 ---
-<img style="float: left; display: inline;" src="https://github.com/tyconsulting/AzureKeyVaultPasswordRepo-PSModule/raw/master/ModuleIcon.png" width="172" height="172" align="left" />
+<img style="float: left; display: inline;" src="https://github.com/TaoYang-cloud/AzureKeyVaultPasswordRepo-PSModule/raw/master/ModuleIcon.png" width="172" height="172" align="left" />
 
 Over the past decade, I have used several password management applications such as <a href="https://pwsafe.org/">Password Safe</a>, <a href="http://keepass.info/">KeePass</a> and <a href="https://www.lastpass.com/">LastPass</a>. Out of these products, only LastPass is cloud based. I have been hesitate to use LastPass over the last few years and stayed with KeePass because of the <a href="http://www.pcworld.com/article/2936621/the-lastpass-security-breach-what-you-need-to-know-do-and-watch-out-for.html">LastPass data breach back in 2015</a>. Few months ago, my friend Alex Verkinderen finally convinced me to start using LastPass again. But this time, in order to be more secure and being able to use Multi-Factor Authentication (MFA), I have purchased a premium account and also purchased a <a href="https://www.yubico.com/products/yubikey-hardware/yubikey-neo/">YubiKey Neo</a> for MFA. I understand not everyone is willing to spend money on password repository solutions (in my case, USD $12 per year for the LastPass Premium account and USD $50 + shipping for a Yubikey Neo from Amazon). Also, based on my personal experience, there are still many organisations that don’t have a centralised password repositories. Many engineers and consultants I have met still store passwords in clear text.
 
@@ -26,7 +26,7 @@ I spent few hours last night and today, developed a PowerShell CLI menu based ap
 
 PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/AzureKeyVaultPasswordRepo/" href="https://www.powershellgallery.com/packages/AzureKeyVaultPasswordRepo/">https://www.powershellgallery.com/packages/AzureKeyVaultPasswordRepo/</a>
 
-GitHub: <a title="https://github.com/tyconsulting/AzureKeyVaultPasswordRepo-PSModule/releases/tag/1.0.0" href="https://github.com/tyconsulting/AzureKeyVaultPasswordRepo-PSModule/releases/tag/1.0.0">https://github.com/tyconsulting/AzureKeyVaultPasswordRepo-PSModule/releases/tag/1.0.0</a>
+GitHub: <a title="https://github.com/TaoYang-cloud/AzureKeyVaultPasswordRepo-PSModule/releases/tag/1.0.0" href="https://github.com/TaoYang-cloud/AzureKeyVaultPasswordRepo-PSModule/releases/tag/1.0.0">https://github.com/TaoYang-cloud/AzureKeyVaultPasswordRepo-PSModule/releases/tag/1.0.0</a>
 
 If you are running PowerShell version 5 and later, you can install this module using an one-liner:
 

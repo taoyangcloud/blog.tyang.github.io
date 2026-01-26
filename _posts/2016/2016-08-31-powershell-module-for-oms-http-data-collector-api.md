@@ -186,7 +186,7 @@ Please keep in mind, since the Custom Fields feature is still at the preview pha
 
 I have published this module in PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/OMSDataInjection" href="https://www.powershellgallery.com/packages/OMSDataInjection">https://www.powershellgallery.com/packages/OMSDataInjection</a>, if you are using PowerShell version 5 and above, you can install it directly from it: **Install-Module –Name OMSDataInjection –Repository PSGallery**
 
-You can also download it from it’s GitHub repo: <a title="https://github.com/tyconsulting/OMSDataInjection-PSModule/releases" href="https://github.com/tyconsulting/OMSDataInjection-PSModule/releases">https://github.com/tyconsulting/OMSDataInjection-PSModule/releases</a>
+You can also download it from it’s GitHub repo: <a title="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases" href="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases">https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases</a>
 
 ## Summary
 

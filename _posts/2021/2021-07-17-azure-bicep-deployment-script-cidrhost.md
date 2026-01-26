@@ -35,19 +35,19 @@ I really hope there is a similar function in ARM and Bicep, but unfortunately, I
 
 I spent some time on this over the last couple of weeks. Initially I tried to leverage all existing ARM functions to calculate IP addresses but unfortunately, calculating IPs are too complicated, I couldn't get it working by only using the native ARM functions. In the end, I created a Bicep module that leverages Azure Deployment Script to calculate IPs within a subnet using PowerShell script.
 
-You can find the module [HERE](https://github.com/tyconsulting/BlogPosts/blob/master/Azure-Bicep/static.ip.allocation/azcidrhost-function.bicep).
+You can find the module [HERE](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure-Bicep/static.ip.allocation/azcidrhost-function.bicep).
 
-I have also created a complete example that deploys 2 VMs using the module. This example can be found in the same GitHub repo [HERE](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/static.ip.allocation).
+I have also created a complete example that deploys 2 VMs using the module. This example can be found in the same GitHub repo [HERE](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/static.ip.allocation).
 
 The deployment script resource executes a PowerShell script. It takes the following input parameters:
 
 * Subnet CIDR address (i.e. in this blog post, i will use '10.101.2.192/28')
 * One or more indexes (i.e. '3,4' will return the 3rd and 4th **usable** IP addresses in the subnet)
- 
+
 The following information is returned from the deployment script module outputs:
 
 * Selected IPs: object that contains all specified IPs. The key for each value is "IP\<index_number\>" i.e.
-  
+
   ```json
   {"IP3":"10.101.2.198","IP4":"10.101.2.199"}
   ```
@@ -65,7 +65,7 @@ In my bicep templates, I can consume the deployment script module output and use
 
 ```hcl
 //define which usable IPs to be used for the VMs. In this example, it's the 3rd and 4th usable IP.
-param vmIpIndexes string = '3,4' 
+param vmIpIndexes string = '3,4'
 
 //information about the existing subnet
 param vnetRG string

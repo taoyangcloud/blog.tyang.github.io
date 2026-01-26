@@ -17,13 +17,13 @@ Microsoft’s PFE Wei Hao Lim has published an awesome blog post that maps OpsMg
 
 There are 36 queries on Wei’s list, so it will take a while to manually create them all as saved searches via the OMS Portal. Since I can see that I will reuse these saved searches in many OMS engagements, I have created a script to automatically create them using the OMS PowerShell Module <a href="https://www.powershellgallery.com/packages/AzureRM.OperationalInsights">AzureRM.OperationalInsights</a>.
 
-So here’s the [script](https://gist.github.com/tyconsulting/0c143b69c59bd4d2b4f96e1511ace0bf):
+So here’s the [script](https://gist.github.com/TaoYang-cloud/0c143b69c59bd4d2b4f96e1511ace0bf):
 
 ```powershell
 #requires -Version 5.0 -Modules AzureRM.OperationalInsights, AzureRM.profile
 <#
 ============================================================================================================================
-AUTHOR:  Tao Yang 
+AUTHOR:  Tao Yang
 DATE:    17-12-2016
 Version: 1.0
 Comment:
@@ -148,7 +148,7 @@ $LoginToAzure = $null = Add-AzureRmAccount -WarningAction SilentlyContinue
 #Get Azure Sub
 $Subscriptions = Get-AzureRmSubscription -WarningAction SilentlyContinue
 Write-Output -InputObject 'Choose Azure Subscription where OMS Log Analytics Workspace is located:'
-for ($i = 1;$i -le $Subscriptions.count; $i++) 
+for ($i = 1;$i -le $Subscriptions.count; $i++)
 {
   Write-Host -Object "$i. $($Subscriptions[$i-1].SubscriptionName)"
 }
@@ -160,7 +160,7 @@ Write-Output -InputObject ''
 #Get OMS workspace
 Write-Output -InputObject 'Select OMS Log Analytics Workspace:'
 $OMSWorkspaces = Get-AzureRmOperationalInsightsWorkspace
-for ($i = 1;$i -le $OMSWorkspaces.count; $i++) 
+for ($i = 1;$i -le $OMSWorkspaces.count; $i++)
 {
   Write-Host -Object "$i. $($OMSWorkspaces[$i-1].Name)"
 }

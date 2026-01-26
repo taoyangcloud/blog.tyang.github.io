@@ -14,7 +14,7 @@ tags:
   - Azure
   - Azure Policy
 ---
-Over the last couple years, I’ve been maintaining a set of custom Azure Policy Definitions for deploying Diagnostic Settings for applicable Azure services. You can find them in my GitHub repo: <a title="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings" href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings</a>
+Over the last couple years, I’ve been maintaining a set of custom Azure Policy Definitions for deploying Diagnostic Settings for applicable Azure services. You can find them in my GitHub repo: <a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/resource-diagnostics-settings</a>
 
 I’ve updated them again over the last couple of weeks. This is what’s changed:
 
@@ -40,4 +40,4 @@ To enable SQL Server auditing for Log Analytics or Event Hub, there are 2 compon
 1. Enable SQL Server Auditing setting with the audit actions and groups of your choice (the audit actions and groups can only be defined using code, not available via the portal UI, you can find the full list on this article: <a href="https://docs.microsoft.com/en-us/sql/relational-databases/security/auditing/sql-server-audit-action-groups-and-actions?view=sql-server-ver15&&WT.mc_id=DOP-MVP-5000997">SQL Server Audit Action Groups and Actions</a>).
 2. Enable Diagnostics Settings on for the master database.
 
-the SQL Server Auditing settings policies are located in a different folder in the same GitHub repo: <a title="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/sql-server-auditing" href="https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/sql-server-auditing">https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/sql-server-auditing</a>
+the SQL Server Auditing settings policies are located in a different folder in the same GitHub repo: <a title="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/sql-server-auditing" href="https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/sql-server-auditing">https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/sql-server-auditing</a>

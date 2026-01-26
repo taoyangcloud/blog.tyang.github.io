@@ -41,16 +41,16 @@ The Webhook URL can belong to anyone and located anywhere in the world. It shoul
 
 Unencrypted data using `HTTP` protocol should be prohibited.
 
-Fortunately the Azure Policy aliases for these properties exist already. I was able to leverage them and created the following policies and placed them in [my azure policy GitHub repo](https://github.com/tyconsulting/azurepolicy/tree/master/policy-definitions/action-groups):
+Fortunately the Azure Policy aliases for these properties exist already. I was able to leverage them and created the following policies and placed them in [my azure policy GitHub repo](https://github.com/TaoYang-cloud/azurepolicy/tree/master/policy-definitions/action-groups):
 
-- [Restrict Azure Monitor Action Group Send Email Notification to External Email Addresses](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-external-email-notification.json)
-- [Restrict Azure Monitor Action Group Send SMS Notification to Unauthorized Phone Numbers](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-sms-notification-recipients.json)
-- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Azure Automation or not on the Allowed List](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-azure-automation-actions.json)
-- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Event Hubs or not on the Allowed List](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-event-hub-actions.json)
-- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Function Apps or not on the Allowed List](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-function-app-actions.json)
-- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Logic Apps or not on the Allowed List](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-logic-app-actions.json)
-- [Restrict Azure Monitor Action Group Trigger Actions to Webhooks that are not on the Allowed List](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-webhooks.json)
-- [Restrict Azure Monitor Action Group Trigger Actions to Webhooks that are not using HTTPS](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-http-webhooks.json)
+- [Restrict Azure Monitor Action Group Send Email Notification to External Email Addresses](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-external-email-notification.json)
+- [Restrict Azure Monitor Action Group Send SMS Notification to Unauthorized Phone Numbers](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-sms-notification-recipients.json)
+- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Azure Automation or not on the Allowed List](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-azure-automation-actions.json)
+- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Event Hubs or not on the Allowed List](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-event-hub-actions.json)
+- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Function Apps or not on the Allowed List](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-function-app-actions.json)
+- [Restrict Azure Monitor Action Group Trigger Actions to Cross-Subscription Logic Apps or not on the Allowed List](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-logic-app-actions.json)
+- [Restrict Azure Monitor Action Group Trigger Actions to Webhooks that are not on the Allowed List](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-unauthorized-webhooks.json)
+- [Restrict Azure Monitor Action Group Trigger Actions to Webhooks that are not using HTTPS](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/action-groups/pol-ag-deny-http-webhooks.json)
 
 With the policies for restricting cross-subscription function app, logic app, event hub and automation runbooks, the definitions provide an array parameter to allow a list of cross-subscription resources. You can use the `allowedAutomationAccounts`, `allowedEventHubNamespaces`, `allowedFunctionApps` and `allowedLogicApps` parameters in its respective policy to approve the use of any of these resources that are located in other subscriptions.
 

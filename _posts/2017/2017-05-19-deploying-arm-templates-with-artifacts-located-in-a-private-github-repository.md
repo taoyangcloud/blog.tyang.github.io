@@ -42,11 +42,11 @@ This token was generated for your current session once you’ve logged in to Git
 
 I spent most of my day yesterday trying to figure out if there is a way to deploy artifacts located in a private GitHub repository and I couldn’t find a way to use the Personal Access Token as a parameter in the HTTP GET request. As I accepted the fact that I wouldn’t be able to do it and started removing all nested templates in my project, I had a light bulb moment when I was driving to the supermarket yesterday afternoon, and the idea I came up with is super simple:  since I cannot pass the personal access token in the URL, I can just write a very simple "proxy" Azure Function app that accept the GitHub personal access token from the URL parameter, then construct the HTTP header, make the request to GitHub, and return the HTTP response it received from GitHub. Once this function is written, we can use the URI to the function as the artifact location instead of the GitHub URI.
 
-### GitHubPrivateRepoFileFetcher Azure Function 
+### GitHubPrivateRepoFileFetcher Azure Function
 
 I’ve written something similar before, so this HTTP Trigger C# Azure function app literally took me 10 minutes to write. I named this function GitHubPrivateRepoFileFetcher:
 
-https://gist.github.com/tyconsulting/f8de503de3df164a6163a3299656d516
+https://gist.github.com/TaoYang-cloud/f8de503de3df164a6163a3299656d516
 
 This function requires 2 parameters to be passed in from the URL:
 
@@ -67,13 +67,13 @@ i.e.
 https://myfunctionapp.azurewebsites.net/api/GitHubPrivateRepoFileFecher?githuburi=https://raw.githubusercontent.com/tyconsulting/TestPrivateRepo/master/DemoNestedTemplates/azuredeploy.json&githubaccesstoken=e82dc3df60b92147c81a9924042da8d7f0bc78c8
 ```
 
-### GitHub Personal Access Token 
+### GitHub Personal Access Token
 
 Before start using the GitHubPrivateRepoFileFetcher function, you will firstly need to generate a GitHub personal access token if you don’t already have one. The token must have access to repo as shown below:
 
 <a href="https://blog.tyang.org/wp-content/uploads/2017/05/image-6.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://blog.tyang.org/wp-content/uploads/2017/05/image_thumb-6.png" alt="image" width="449" height="501" border="0" /></a>
 
-### Constructing ARM Templates 
+### Constructing ARM Templates
 
 In the ARM templates, define the following parameters (and define the default value to match your environment):
 ```json
@@ -146,7 +146,7 @@ For the Azure Automation runbook resource, use the variable defined above in the
 ]
 ```
 
-### **GitHub README.md** 
+### **GitHub README.md**
 
 Most of the ARM template repositories contains the "Deploy to Azure" and "Visualize" buttons as shown below:
 
@@ -175,7 +175,7 @@ When the deployment is completed, the resources defined in the ARM templates are
 
 <a href="https://blog.tyang.org/wp-content/uploads/2017/05/image-9.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="https://blog.tyang.org/wp-content/uploads/2017/05/image_thumb-9.png" alt="image" width="407" height="202" border="0" /></a>
 
-### Conclusion 
+### Conclusion
 
 By using the "proxy" Azure Function GitHubPrivateRepoFileFetcher, you can easily retrieve the content of a file in private GitHub repo without having to use custom headers in HTTP request. This "proxy" Azure Function is generic that you can use for any Azure subscriptions and any GitHub private repositories. If you regularly use GitHub private repositories for ARM templates, I strongly recommend you to create such a Azure function to assist you with your deployments.
 

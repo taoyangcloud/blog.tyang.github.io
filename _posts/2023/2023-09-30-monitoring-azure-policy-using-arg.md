@@ -24,7 +24,7 @@ Few days ago I came across this post from the Azure Observability Blog : [Query 
 Today, I have spent few hours and created a native monitoring solution for Azure Policy compliance states leveraging this new capability using Azure Monitor and Azure Resource Graph. This solution is nothing more than a standard log query alert rule. It is a lot simpler than the solution I created 2 years ago using Azure EventGrid and Azure Function app.
 
 I have codified the solution into an Azure Bicep template and published it to my GitHub repo here: [BlogPosts/Azure-Bicep
-/policy.monitor](https://github.com/tyconsulting/BlogPosts/tree/master/Azure-Bicep/policy.monitor)
+/policy.monitor](https://github.com/TaoYang-cloud/BlogPosts/tree/master/Azure-Bicep/policy.monitor)
 
 ## Solution Overview
 

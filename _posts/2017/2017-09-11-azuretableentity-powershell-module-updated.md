@@ -18,7 +18,7 @@ I have updated the AzureTableEntity PowerShell module few days ago. The latest v
 
 PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/AzureTableEntity/1.0.3.0" href="https://www.powershellgallery.com/packages/AzureTableEntity/1.0.3.0">https://www.powershellgallery.com/packages/AzureTableEntity/1.0.3.0</a>
 
-GitHub: <a title="https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module/releases" href="https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module/releases">https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module/releases</a>
+GitHub: <a title="https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module/releases" href="https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module/releases">https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module/releases</a>
 
 What’s changed?
 

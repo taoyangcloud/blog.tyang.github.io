@@ -33,7 +33,7 @@ On the other hand, if you have apply the Deny Hybrid Use Benefit policy, you wil
 
 <a href="https://blog.tyang.org/wp-content/uploads/2018/03/image-11.png"><img style="display: inline; background-image: none;" title="image" src="https://blog.tyang.org/wp-content/uploads/2018/03/image_thumb-11.png" alt="image" width="583" height="327" border="0" /></a>
 
-These two policy definitions are great, but to me, none of them meets my requirements. I don’t want to educate my users on what settings should they use, and throwing an error at the summary page of the wizard is not very user friendly. I want my users to not worry about this setting, and automatically enable Hybrid Use Benefit for Windows server VMs. Therefore I created [new custom definition](https://gist.github.com/tyconsulting/14137eb880edf4397918a91f924b3b01) based on the above mentioned 2 existing definitions to append Hybrid Use Benefit for a Windows Server VM (automatically enable it):
+These two policy definitions are great, but to me, none of them meets my requirements. I don’t want to educate my users on what settings should they use, and throwing an error at the summary page of the wizard is not very user friendly. I want my users to not worry about this setting, and automatically enable Hybrid Use Benefit for Windows server VMs. Therefore I created [new custom definition](https://gist.github.com/TaoYang-cloud/14137eb880edf4397918a91f924b3b01) based on the above mentioned 2 existing definitions to append Hybrid Use Benefit for a Windows Server VM (automatically enable it):
 
 ```json
 {

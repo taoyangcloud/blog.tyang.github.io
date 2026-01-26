@@ -28,7 +28,7 @@ In this post, I am going to demonstrate 2 use cases:
 1. Using a modified version from Azure Artifacts
 2. Using the public version from the PowerShell Gallery with customized configuration file hosted internally inside your organization
 
-All the source code for this post can be found in `CloudNaming` module's GitHub repository under the [pipeline-examples folder]](https://github.com/tyconsulting/CloudNaming-Module/tree/master/pipeline-examples)
+All the source code for this post can be found in `CloudNaming` module's GitHub repository under the [pipeline-examples folder]](https://github.com/TaoYang-cloud/CloudNaming-Module/tree/master/pipeline-examples)
 
 ## Consuming Customized Version From Azure Artifacts
 
@@ -36,7 +36,7 @@ In this example, I am using an organization-level Azure Artifacts feed called `P
 
 ### Pipeline for Pushing the Module to Azure Artifacts
 
-Firstly, I have created a pipeline to publish the customized version of the `CloudNaming` module to the `PSModules` feed. You can find the pipeline definition in the [GitHub repository](https://github.com/tyconsulting/CloudNaming-Module/blob/master/pipeline-examples/pipelines/azure-pipelines-install-azure-artifacts.yml)
+Firstly, I have created a pipeline to publish the customized version of the `CloudNaming` module to the `PSModules` feed. You can find the pipeline definition in the [GitHub repository](https://github.com/TaoYang-cloud/CloudNaming-Module/blob/master/pipeline-examples/pipelines/azure-pipelines-install-azure-artifacts.yml)
 
 You will make sure that you have given the following identities the contributor role to the Azure Artifacts organization-level feed:
 
@@ -59,13 +59,13 @@ This pipeline will perform the following tasks:
 
 ![07](../../../../assets/images/2022/09/cloudNaming-07.jpg)
 
-The code for this sample pipeline can be found [HERE](https://github.com/tyconsulting/CloudNaming-Module/blob/master/pipeline-examples/pipelines/azure-pipelines-demo-1.yaml)
+The code for this sample pipeline can be found [HERE](https://github.com/TaoYang-cloud/CloudNaming-Module/blob/master/pipeline-examples/pipelines/azure-pipelines-demo-1.yaml)
 
 Scenario:
 
 * Install CloudNaming module from a Organization-Level Azure Artifact feed (Internal to the organization).
 * Use default configuration file from the module
-* Generate resource names one at a time (basic usage) using a [PowerShell script](https://github.com/tyconsulting/CloudNaming-Module/blob/master/pipeline-examples/scripts/update-demo-1-parameters.ps1)
+* Generate resource names one at a time (basic usage) using a [PowerShell script](https://github.com/TaoYang-cloud/CloudNaming-Module/blob/master/pipeline-examples/scripts/update-demo-1-parameters.ps1)
 * Update the Bicep template parameter file with the generated resource names
 * Publish updated parameter file
 * Deploy the Bicep template with the updated parameter file to an Azure subscription
@@ -78,13 +78,13 @@ Scenario:
 
 In this example, I am using the public version of the `CloudNaming` module from the PowerShell Gallery. I have also created a customized configuration file to configure my organization's internally approved naming standard.
 
-The code for this sample pipeline can be found [HERE](https://github.com/tyconsulting/CloudNaming-Module/blob/master/pipeline-examples/pipelines/azure-pipelines-demo-2.yaml)
+The code for this sample pipeline can be found [HERE](https://github.com/TaoYang-cloud/CloudNaming-Module/blob/master/pipeline-examples/pipelines/azure-pipelines-demo-2.yaml)
 
 Scenario:
 
 * Install CloudNaming module from Public PowerShell Gallery repository.
 * Uses a custom configuration file from the `config` folder.
-* Generate multiple resource names in one command (advanced scenario) using a [PowerShell script](https://github.com/tyconsulting/CloudNaming-Module/blob/master/pipeline-examples/scripts/update-demo-2-parameters.ps1)
+* Generate multiple resource names in one command (advanced scenario) using a [PowerShell script](https://github.com/TaoYang-cloud/CloudNaming-Module/blob/master/pipeline-examples/scripts/update-demo-2-parameters.ps1)
 * Update the Bicep template parameter file with the generated resource names
 * Publish updated parameter file
 * Deploy the Bicep template with the updated parameter file to an Azure subscription

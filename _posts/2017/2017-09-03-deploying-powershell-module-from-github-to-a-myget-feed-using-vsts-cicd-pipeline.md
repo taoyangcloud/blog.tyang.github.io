@@ -29,7 +29,7 @@ In summary, this is the process:
    2. unzip the zip file
    3. publish the module to my MyGet feed
 
-In order to demonstrate the process, I have quickly written a PowerShell module that plays random sound clips from my favorite cartoon South Park. This demo module is located in a Public GitHub repo: <a title="https://github.com/tyconsulting/PSSouthPark" href="https://github.com/tyconsulting/PSSouthPark">https://github.com/tyconsulting/PSSouthPark</a>
+In order to demonstrate the process, I have quickly written a PowerShell module that plays random sound clips from my favorite cartoon South Park. This demo module is located in a Public GitHub repo: <a title="https://github.com/TaoYang-cloud/PSSouthPark" href="https://github.com/TaoYang-cloud/PSSouthPark">https://github.com/TaoYang-cloud/PSSouthPark</a>
 
 I’ll now go through the entire process of setting up the pipeline in VSTS.
 
@@ -178,4 +178,4 @@ When I log on to MyGet, I can see the PSSouthPark module in my private feed:
 <a href="https://blog.tyang.org/wp-content/uploads/2017/09/image-24.png"><img style="display: inline; background-image: none;" title="image" src="https://blog.tyang.org/wp-content/uploads/2017/09/image_thumb-24.png" alt="image" width="791" height="575" border="0" /></a>
 
 ## Conclusion
-By creating such VSTS CI/CD pipeline, I no longer need to manually push modules to my MyGet feed (which I use a lot) during development process. The deployment and pester test scripts can be reused with minimum modification. If you want to try this out yourself, please feel free to fork my sample <a href="https://github.com/tyconsulting/PSSouthPark">PSSouthPark module repo</a> and give it a try.
+By creating such VSTS CI/CD pipeline, I no longer need to manually push modules to my MyGet feed (which I use a lot) during development process. The deployment and pester test scripts can be reused with minimum modification. If you want to try this out yourself, please feel free to fork my sample <a href="https://github.com/TaoYang-cloud/PSSouthPark">PSSouthPark module repo</a> and give it a try.

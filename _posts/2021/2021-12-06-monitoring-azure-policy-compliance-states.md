@@ -43,7 +43,7 @@ The solution consists of the following components:
 
 4. A YAML pipeline for Azure DevOps to deploy the entire solution
 
-The solution is published in my GitHub repo [azure.policy.monitor](https://github.com/tyconsulting/azure.policy.monitor).
+The solution is published in my GitHub repo [azure.policy.monitor](https://github.com/TaoYang-cloud/azure.policy.monitor).
 
 ## Deployment Instruction
 

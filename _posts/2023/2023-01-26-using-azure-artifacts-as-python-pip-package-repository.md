@@ -51,9 +51,9 @@ The pipeline will also download all the dependencies from `pyPI.org` and upload 
 
 ![4](../../../../assets/images/2023/01/pip-feed-04.jpg)
 
-The pipeline YAML file and the scripts used by the pipeline are available in my GitHub repo: [https://github.com/tyconsulting/azure.artifacts.demo](https://github.com/tyconsulting/azure.artifacts.demo)
+The pipeline YAML file and the scripts used by the pipeline are available in my GitHub repo: [https://github.com/TaoYang-cloud/azure.artifacts.demo](https://github.com/TaoYang-cloud/azure.artifacts.demo)
 
-The pipeline is created based on the YAML file [azure-pipeline-publish-pip-packages.yaml](https://github.com/tyconsulting/azure.artifacts.demo/blob/master/pipelines/azure-pipeline-publish-pip-packages.yaml)
+The pipeline is created based on the YAML file [azure-pipeline-publish-pip-packages.yaml](https://github.com/TaoYang-cloud/azure.artifacts.demo/blob/master/pipelines/azure-pipeline-publish-pip-packages.yaml)
 
 To customize the YAML file for your own use, you need to change the `feedName` variable value on line 13.
 

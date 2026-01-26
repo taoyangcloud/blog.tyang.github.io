@@ -32,13 +32,13 @@ Type=Heartbeat | Skip 10000 | Top 5000
 Type=Heartbeat | Skip 15000 | Top 5000
 ```
 
-I have written a [sample script](https://gist.github.com/tyconsulting/5751fe6a364d989df2fc76138e55bb37) using the OMS PowerShell module to demonstrate how to use the "skip" command in subsequent queries. The sample script is listed below:
+I have written a [sample script](https://gist.github.com/TaoYang-cloud/5751fe6a364d989df2fc76138e55bb37) using the OMS PowerShell module to demonstrate how to use the "skip" command in subsequent queries. The sample script is listed below:
 
 ```powershell
 #requires -Version 3.0 -Modules AzureRM.Profile,AzureRM.OperationalInsights
 <#
 =======================================================================
-AUTHOR:  Tao Yang 
+AUTHOR:  Tao Yang
 DATE:    24/04/2017
 Version: 1.0
 Comment:

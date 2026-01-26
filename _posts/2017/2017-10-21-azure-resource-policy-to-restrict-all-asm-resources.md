@@ -12,7 +12,7 @@ tags:
   - Azure
   - Azure Resource Policy
 ---
-I needed to find a way to restrict ALL Azure Service Manager (ASM, aka Classic) resources on the subscription level. Azure Resource Policy seems to be a logical choice. So I quickly developed [a very simple Policy Definition](https://gist.github.com/tyconsulting/5d48530f5a7a58d50fc8c83bd3995c99):
+I needed to find a way to restrict ALL Azure Service Manager (ASM, aka Classic) resources on the subscription level. Azure Resource Policy seems to be a logical choice. So I quickly developed [a very simple Policy Definition](https://gist.github.com/TaoYang-cloud/5d48530f5a7a58d50fc8c83bd3995c99):
 
 ```json
 {

@@ -47,7 +47,7 @@ PARAM (
 )
 Write-output "Hello $Name"
 ```
-[Sample code](https://gist.github.com/tyconsulting/99ac239c4b7522917c89cc80be097f23) for creating the webhook on Hybrid Worker groups:
+[Sample code](https://gist.github.com/TaoYang-cloud/99ac239c4b7522917c89cc80be097f23) for creating the webhook on Hybrid Worker groups:
 
 ```powershell
 #Function to generate Azure AD authorization token for the ARM rest API
@@ -57,12 +57,12 @@ Function Get-AADToken {
   PARAM (
     [Parameter(Position=0,Mandatory=$true)]
     [ValidateScript({
-      try 
+      try
       {
         [System.Guid]::Parse($_) | Out-Null
         $true
-      } 
-      catch 
+      }
+      catch
       {
         $false
       }
@@ -74,7 +74,7 @@ Function Get-AADToken {
     [pscredential]
     [System.Management.Automation.CredentialAttribute()]
     $Credential,
-    
+
     [Parameter(Position=0,Mandatory=$false)][Alias('type')]
     [ValidateSet('UserPrincipal', 'ServicePrincipal')]
     [String]$AuthenticationType = 'UserPrincipal'
@@ -112,7 +112,7 @@ Function Get-AADToken {
       $authResult = $authContext.AcquireTokenAsync($resourceAppIdURI,$ClientCred)
       $Token = $authResult.Result.CreateAuthorizationHeader()
     }
-    
+
   }
   Catch
   {
@@ -165,7 +165,7 @@ $NewWebHookRequestURI = "https://management.azure.com/subscriptions/$subscriptio
 $webhookrequestbody = @{
   name = $webhookName
   properties = @{
-    isEnabled = $true 
+    isEnabled = $true
     Uri = $webhookuri
     expiryTime = $webhookExpiryDate
     runbook = @{

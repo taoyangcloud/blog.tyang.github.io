@@ -23,7 +23,7 @@ tags:
 
 This blog has been a bit quiet over the last few weeks. This is because I have been really really busy. I have spent a lot of time working on an updated version of the SharePointSDK PS module. Just in case you have not played with this module, here’s some background info:
 
-Just over a year ago, I posted a PowerShell / SMA / Azure Automation module on <a href="https://blog.tyang.org/2014/12/23/sma-integration-module-sharepoint-list-operations/">this blog</a> called SharePointSDK. Few months ago, I have also published this module on <a href="https://github.com/tyconsulting/SharePointSDK_PowerShellModule">Github</a> and <a href="https://www.powershellgallery.com/packages/SharePointSDK">PowerShell Gallery</a>. This module was designed to help automate operations around SharePoint lists (i.e. CRUD operations for SharePoint list items). Coupling SharePoint (both On-prem version or SharePoint Online) with Azure Automation (or even SMA) is becoming more and more common in the community when designing automation solutions. This module provides ways for your automation runbooks to interact with SharePoint list items.
+Just over a year ago, I posted a PowerShell / SMA / Azure Automation module on <a href="https://blog.tyang.org/2014/12/23/sma-integration-module-sharepoint-list-operations/">this blog</a> called SharePointSDK. Few months ago, I have also published this module on <a href="https://github.com/TaoYang-cloud/SharePointSDK_PowerShellModule">Github</a> and <a href="https://www.powershellgallery.com/packages/SharePointSDK">PowerShell Gallery</a>. This module was designed to help automate operations around SharePoint lists (i.e. CRUD operations for SharePoint list items). Coupling SharePoint (both On-prem version or SharePoint Online) with Azure Automation (or even SMA) is becoming more and more common in the community when designing automation solutions. This module provides ways for your automation runbooks to interact with SharePoint list items.
 
 However, I believe the original 1.0 release was really basic, and there are still a lot I’d like to cover in this module. Now I’m pleased to announce the new major release (version 2.0.1) is now available on both Github and PowerShell Gallery.
 
@@ -250,7 +250,7 @@ After SCU, I am planning to write another blog post for my <a href="https://blog
 
 ## Download the Module
 
-So for now, if you’d like to give this module a try, you can find it from both <a href="https://github.com/tyconsulting/SharePointSDK_PowerShellModule/releases/tag/2.0.1">GitHub</a> and <a href="https://www.powershellgallery.com/packages/SharePointSDK/2.0.1">PowerShell Gallery</a>. All functions are fully documented in the help file. <strong>You can access the help document as well as code examples using Get-Help with –Full switch</strong>.
+So for now, if you’d like to give this module a try, you can find it from both <a href="https://github.com/TaoYang-cloud/SharePointSDK_PowerShellModule/releases/tag/2.0.1">GitHub</a> and <a href="https://www.powershellgallery.com/packages/SharePointSDK/2.0.1">PowerShell Gallery</a>. All functions are fully documented in the help file. <strong>You can access the help document as well as code examples using Get-Help with –Full switch</strong>.
 
 Lastly, if you have any feedback, or suggestions for future releases, please feel free to drop me an email.
 

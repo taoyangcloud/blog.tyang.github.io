@@ -20,7 +20,7 @@ If you are interested in this topic, please feel free to pick a time that’s su
 
 <a title="https://attendee.gotowebinar.com/rt/3979835542420770052" href="https://attendee.gotowebinar.com/rt/3979835542420770052">https://attendee.gotowebinar.com/rt/3979835542420770052</a>
 
-Lastly, the workshop guide, and a sample completed Visual Studio project can be found in this GitHub repo: <a title="https://github.com/tyconsulting/SquaredUp-VSAE-Workshop" href="https://github.com/tyconsulting/SquaredUp-VSAE-Workshop">https://github.com/tyconsulting/SquaredUp-VSAE-Workshop</a>.
+Lastly, the workshop guide, and a sample completed Visual Studio project can be found in this GitHub repo: <a title="https://github.com/TaoYang-cloud/SquaredUp-VSAE-Workshop" href="https://github.com/TaoYang-cloud/SquaredUp-VSAE-Workshop">https://github.com/TaoYang-cloud/SquaredUp-VSAE-Workshop</a>.
 
 If you’d like to build the MP during the webinar with us, there are some pre-requisites that you must complete the steps outlined in section of the workshop guide before attending to the webinar.
 

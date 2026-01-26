@@ -21,7 +21,7 @@ Initially, I thought this would be very straightforward and should have been don
 
 **Step 1: Create an Azure AD application and service principal for Postman.**
 
-I have automated the creation process using a [PowerShell script](https://gist.github.com/tyconsulting/a42acbaea669d4aa4e696776a5a3b939) shown below:
+I have automated the creation process using a [PowerShell script](https://gist.github.com/TaoYang-cloud/a42acbaea669d4aa4e696776a5a3b939) shown below:
 
 ```powershell
 #Requires -Modules AzureRM.Resources, AzureRM.Profile

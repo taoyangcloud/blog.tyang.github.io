@@ -19,7 +19,7 @@ This introduces a potential data exfiltration risk if you are allowing the users
 
 I have developed a Azure Policy definition to provide control to this scenario. It can be used to restrict cross-subscription (and cross-tenant) Private endpoint connections when an Azure Private Endpoint is created in your Azure environment.
 
-The policy definition can be found at my GitHub `azurepolicy` repo [HERE](https://github.com/tyconsulting/azurepolicy/blob/master/policy-definitions/restrict-cross-subscription-pe/azurepolicy.json).
+The policy definition can be found at my GitHub `azurepolicy` repo [HERE](https://github.com/TaoYang-cloud/azurepolicy/blob/master/policy-definitions/restrict-cross-subscription-pe/azurepolicy.json).
 
 This policy can also be used to restrict users from creating a Private Endpoint for a resource in another subscription (cross-subscription but same tenant) except for resource Ids or aliases defined in the `allowedCrossSubPrivateLinkResources` parameter. This allows your security and cloud governance team to examine each connection and verify they are legitimate before allowing the connection.
 

@@ -26,7 +26,7 @@ At the beginning of every project, it is such a painful experience to get custom
 
 This utility is an Azure DevOps Pipeline that can be used to validate the self-hosted Linux agents. It uses bash shell scripts to firstly query Azure DevOps REST API to get a list of agents, then it executes the validation shell script on every single agent in the agent pool.
 
-You can find the code in my GitHub repo **[ado-agent-validation](https://github.com/tyconsulting/ado-agent-validation)**
+You can find the code in my GitHub repo **[ado-agent-validation](https://github.com/TaoYang-cloud/ado-agent-validation)**
 
 As shown below, I have 2 agent pools in my lab ADO organisation, both have few Ubuntu VMs provisioned as agents. I have configured 2 agent instances per VM. In total, I have 2 VMs running total of 4 agents in the "dev" agent pool, and 1 VM running 2 agents in the "prod" agent pool.
 
@@ -36,7 +36,7 @@ The agent validation jobs are executed in parallel within each stage. It ensures
 
 ![02](../../../../assets/images/2023/07/ado-agent-validation-02.jpg)
 
-In the agent validation script used by the pipeline ([linux-agent-check.sh](https://github.com/tyconsulting/ado-agent-validation/blob/main/scripts/linux-agent-check.sh)), I have included the following checks:
+In the agent validation script used by the pipeline ([linux-agent-check.sh](https://github.com/TaoYang-cloud/ado-agent-validation/blob/main/scripts/linux-agent-check.sh)), I have included the following checks:
 
 * Check if the following software are installed:
   * `python3` and `pip3`
@@ -73,13 +73,13 @@ You must allow the pipeline to read the agent pool information from your Azure D
 
 ## Prepare the code
 
-When you are preparing the pipeline code in a git repository, you need to make sure all agent pool names are defined in the variable yaml template [template-agent-validation-variables.yml](https://github.com/tyconsulting/ado-agent-validation/blob/main/pipelines/templates/template-agent-validation-variables.yml)
+When you are preparing the pipeline code in a git repository, you need to make sure all agent pool names are defined in the variable yaml template [template-agent-validation-variables.yml](https://github.com/TaoYang-cloud/ado-agent-validation/blob/main/pipelines/templates/template-agent-validation-variables.yml)
 
-Secondly, configure the pipeline YAML file [azure-pipelines-linux-ado-agent-validation.yaml](https://github.com/tyconsulting/ado-agent-validation/blob/main/pipelines/azure-pipelines-linux-ado-agent-validation.yaml) to have a stage for each agent pool you want to validate. The `poolName` value is from the variable defined in the previous step. For example, in my sample code, I have 2 agent pools (dev and prod), so I have 2 stages in the pipeline YAML file:
+Secondly, configure the pipeline YAML file [azure-pipelines-linux-ado-agent-validation.yaml](https://github.com/TaoYang-cloud/ado-agent-validation/blob/main/pipelines/azure-pipelines-linux-ado-agent-validation.yaml) to have a stage for each agent pool you want to validate. The `poolName` value is from the variable defined in the previous step. For example, in my sample code, I have 2 agent pools (dev and prod), so I have 2 stages in the pipeline YAML file:
 
 ![05](../../../../assets/images/2023/07/ado-agent-validation-05.jpg)
 
-Lastly, update the agent validation script [linux-agent-check.sh](https://github.com/tyconsulting/ado-agent-validation/blob/main/scripts/linux-agent-check.sh) according to your requirements. You can add or remove checks as you wish. I have tested this script on both Ubuntu and RHEL agents.
+Lastly, update the agent validation script [linux-agent-check.sh](https://github.com/TaoYang-cloud/ado-agent-validation/blob/main/scripts/linux-agent-check.sh) according to your requirements. You can add or remove checks as you wish. I have tested this script on both Ubuntu and RHEL agents.
 
 When you are ready, create a new pipeline from the existing YAML file **pipelines/azure-pipelines-linux-ado-agent-validation.yaml** and you can start validating your agents!
 

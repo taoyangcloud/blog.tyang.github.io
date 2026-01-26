@@ -13,7 +13,7 @@ tags:
   - Pester
 ---
 
-I have updated the AzPolicyTest PowerShell module ([GitHub](https://github.com/tyconsulting/AzPolicyTest), [PowerShell Gallery](https://www.powershellgallery.com/packages/AzPolicyTest/)) to `v2.8.0`. This release includes the following updates:
+I have updated the AzPolicyTest PowerShell module ([GitHub](https://github.com/TaoYang-cloud/AzPolicyTest), [PowerShell Gallery](https://www.powershellgallery.com/packages/AzPolicyTest/)) to `v2.8.0`. This release includes the following updates:
 
 ## New test to check if any referenced resource types are excluded from policy evaluation
 

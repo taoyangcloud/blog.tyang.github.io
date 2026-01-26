@@ -56,7 +56,7 @@ I suspect this is because for PowerShell based functions, we have to output to a
 
 Luckily I found this post and it pointed me to the right direction: <a title="http://anthonychu.ca/post/azure-functions-serve-html/" href="http://anthonychu.ca/post/azure-functions-serve-html/">http://anthonychu.ca/post/azure-functions-serve-html/</a>. According on this post, we can certainly serve out a proper HTML page in C# based functions.
 
-I don’t really want to rewrite all my PowerShell functions to C#, not only because I don’t want to reinvent the wheels, but also I want to keep using the PowerShell modules in those existing functions. In the end, I came up with C# based "wrapper" function. I named this function [**HTTPTriggerProxy**](https://gist.github.com/tyconsulting/eae44357f14818006bf0ba94bf07bae1):
+I don’t really want to rewrite all my PowerShell functions to C#, not only because I don’t want to reinvent the wheels, but also I want to keep using the PowerShell modules in those existing functions. In the end, I came up with C# based "wrapper" function. I named this function [**HTTPTriggerProxy**](https://gist.github.com/TaoYang-cloud/eae44357f14818006bf0ba94bf07bae1):
 
 ```cpp
 using System.Net;
@@ -79,11 +79,11 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
   Encoding outputencoding = Encoding.GetEncoding("ASCII");
   var ProxyResponse = new HttpResponseMessage();
   HttpStatusCode statuscode = new HttpStatusCode();
-  
+
   if (requesturl == null)
   {
     statuscode = HttpStatusCode.BadRequest;
-    StringContent errorcontent =new StringContent("Please pass a web request url on the query string or in the request body", outputencoding); 
+    StringContent errorcontent =new StringContent("Please pass a web request url on the query string or in the request body", outputencoding);
     ProxyResponse = req.CreateResponse(statuscode, errorcontent);
     ProxyResponse.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
     ProxyResponse.Content = errorcontent;

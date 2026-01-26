@@ -63,7 +63,7 @@ These functions requires the <a href="http://www.tyconsulting.com.au/portfolio/o
 
 **Download Link:**
 
-I have uploaded the code for above mentioned PowerShell functions to Github. You can download them from <a title="https://github.com/tyconsulting/OpsMgr-SDK-Scripts/tree/master/OpsLogix%20Oracle%20MP%20Scripts" href="https://github.com/tyconsulting/OpsMgr-SDK-Scripts/tree/master/OpsLogix%20Oracle%20MP%20Scripts">https://github.com/tyconsulting/OpsMgr-SDK-Scripts/tree/master/OpsLogix%20Oracle%20MP%20Scripts</a>
+I have uploaded the code for above mentioned PowerShell functions to Github. You can download them from <a title="https://github.com/TaoYang-cloud/OpsMgr-SDK-Scripts/tree/master/OpsLogix%20Oracle%20MP%20Scripts" href="https://github.com/TaoYang-cloud/OpsMgr-SDK-Scripts/tree/master/OpsLogix%20Oracle%20MP%20Scripts">https://github.com/TaoYang-cloud/OpsMgr-SDK-Scripts/tree/master/OpsLogix%20Oracle%20MP%20Scripts</a>
 
 Now, let’s test them, I will use the –verbose switch when calling these functions so you can see the verbose messages.
 

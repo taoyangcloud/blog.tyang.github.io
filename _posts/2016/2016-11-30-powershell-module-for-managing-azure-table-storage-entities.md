@@ -24,7 +24,7 @@ Firstly, apologies for not being able to blog for 6 weeks. I have been really bu
 
 This PowerShell module is named as AzureTableEntity, it can be located in both GitHub and PowerShell Gallery:
 
- * GitHub: <a title="https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module" href="https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module">https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module</a>
+ * GitHub: <a title="https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module" href="https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module">https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module</a>
  * PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/AzureTableEntity" href="https://www.powershellgallery.com/packages/AzureTableEntity">https://www.powershellgallery.com/packages/AzureTableEntity</a>
 
 This module offers the following 4 functions:
@@ -72,16 +72,16 @@ Once you have created the connection objects, instead of specifying storage acco
 
 ### Sample Code
 
-I have published some sample code I wrote when developing this module to [GitHub Gist](https://gist.github.com/tyconsulting/1ff706181d8e476528c86b8f7ac8af23):
+I have published some sample code I wrote when developing this module to [GitHub Gist](https://gist.github.com/TaoYang-cloud/1ff706181d8e476528c86b8f7ac8af23):
 
 ```powershell
 <#
 ================================================================================
-AUTHOR:  Tao Yang 
+AUTHOR:  Tao Yang
 DATE:    30/11/2016
 Version: 1.0
 Comment: Sample code for using AzureTableEntity PowerShell module
-Project Repo: https://github.com/tyconsulting/AzureTableEntity-PowerShell-Module
+Project Repo: https://github.com/TaoYang-cloud/AzureTableEntity-PowerShell-Module
 ================================================================================
 #>
 

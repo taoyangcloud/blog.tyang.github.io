@@ -28,4 +28,4 @@ If you are using the OMSDataInjection module, I strongly recommend you to update
 
 PowerShell Gallery: <a title="https://www.powershellgallery.com/packages/OMSDataInjection" href="https://www.powershellgallery.com/packages/OMSDataInjection">https://www.powershellgallery.com/packages/OMSDataInjection</a>
 
-GitHub: <a title="https://github.com/tyconsulting/OMSDataInjection-PSModule/releases/tag/v1.2.0" href="https://github.com/tyconsulting/OMSDataInjection-PSModule/releases/tag/v1.2.0">https://github.com/tyconsulting/OMSDataInjection-PSModule/releases/tag/v1.2.0</a>
+GitHub: <a title="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases/tag/v1.2.0" href="https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases/tag/v1.2.0">https://github.com/TaoYang-cloud/OMSDataInjection-PSModule/releases/tag/v1.2.0</a>

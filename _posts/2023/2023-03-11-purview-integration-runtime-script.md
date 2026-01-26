@@ -16,7 +16,7 @@ I needed to create Azure Purview with a Self-Hosted Integration Runtime (SHIR) a
 
 In the Azure REST API documentation, it is under a category called "Scanning Data Plane". The API endpoint for creating the Purview IRs is `PUT {Endpoint}/scan/integrationruntimes/{integrationRuntimeName}?api-version=2022-07-01-preview`
 
-I was not able to find any commands from Azure CLI and Azure PowerShell to create the Purview IRs. So I create a PowerShell script to invoke this REST API directly. It can be used to create either an Azure (Managed) or Self-Hosted IR. The script is available on my [BlogPost GitHub repo](https://github.com/tyconsulting/BlogPosts/blob/master/Azure/CreatePurviewIR.ps1).
+I was not able to find any commands from Azure CLI and Azure PowerShell to create the Purview IRs. So I create a PowerShell script to invoke this REST API directly. It can be used to create either an Azure (Managed) or Self-Hosted IR. The script is available on my [BlogPost GitHub repo](https://github.com/TaoYang-cloud/BlogPosts/blob/master/Azure/CreatePurviewIR.ps1).
 
 I used this script as part of my IaC pipeline. It checks if the IR already exists before creating it. So it can be executed as many times as needed without causing any errors.
 
