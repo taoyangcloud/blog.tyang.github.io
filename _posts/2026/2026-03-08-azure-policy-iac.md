@@ -15,7 +15,7 @@ tags:
 
 ## Background
 
-I have developed several Azure Policy related solutions for various customers over the last 4-5 years. Some of these patterns have kept evolving over time.
+I have developed several Azure Policy-related solutions for various customers over the last 4-5 years. Some of these patterns have kept evolving over time.
 
 I have decided to open source these solutions and share with the community. At the moment, there are at least 3 solutions that I have in mind.
 
