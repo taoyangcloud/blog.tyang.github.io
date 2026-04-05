@@ -55,10 +55,12 @@ The Azure Policy IaC solution in this repository includes the following key feat
 
 ## Learn More
 
-You can find the AzPolicyFactory solution in the following GitHub repository: [AzPolicyFactory](https://github.com/taoyangcloud/AzPolicyFactory). I have included very comprehensive documentation in the repository to help you get started.
+You can find the AzPolicyFactory solution in the following GitHub repository: [AzPolicyFactory](https://aka.ms/AzPolicyFactory). I have included very comprehensive documentation in the repository to help you get started.
 
 ## What's Next?
 
-Since I only joined Microsoft a little over a month ago, I am still finding my way around. My plan is to try to move this repository to the Azure GitHub organization. If I manage to do that, I will update this post with the new link. In the meantime, you can check out the repository in my personal GitHub account.
+~~Since I only joined Microsoft a little over a month ago, I am still finding my way around. My plan is to try to move this repository to the Azure GitHub organization. If I manage to do that, I will update this post with the new link. In the meantime, you can check out the repository in my personal GitHub account.~~
+
+**2026-04-05 Update**: I have successfully moved the repository to the Azure GitHub organization. You can now find it at [aka.ms/AzPolicyFactory](https://aka.ms/AzPolicyFactory). Unfortunately, it's not move, but initialize a new repo and copy the code over. So the stars and forks are not moved. If you have already starred or forked the original repo, please update to the new one. I will archive the original repo soon.
 
 Next, I'm planning to release a solution I spent over 8 months developing, which I completed about 18 months ago — a framework for Azure Policy integration testing. I'm in the process of finding a good place to release it within Microsoft. Hopefully it won't be too long before I can share it with the community. Stay tuned!
