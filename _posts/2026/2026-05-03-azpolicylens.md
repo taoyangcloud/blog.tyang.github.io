@@ -103,7 +103,7 @@ The detailed features can be found in the [Feature Comparison](https://github.co
 
 ## Image Gallery
 
-:memo: Here are some screenshots of the generated wiki content from AzPolicyLens (for comprehensive sample wiki sites, please refer to the [demo wiki sites](https://github.com/Azure/AzPolicyLens#demo)).
+:memo: Here are some screenshots (Click to enlarge) of the generated wiki content from AzPolicyLens (for comprehensive sample wiki sites, please refer to the [demo wiki sites](https://github.com/Azure/AzPolicyLens#demo)).
 
 {% include gallery caption="Click any image to view it in full size." %}
 
