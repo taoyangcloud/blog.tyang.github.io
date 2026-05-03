@@ -1,5 +1,5 @@
 ---
-title: AzPolicyLens: Automated Azure Policy Insights and Reporting
+title: AzPolicyLens - Automated Azure Policy Insights and Reporting
 date: 2026-05-03 10:00
 author: Tao Yang
 permalink: /2026/05/03/azpolicylens
