@@ -60,6 +60,10 @@ This solution has been in active development for the last 12 months, and I am ex
 
 In this blog post, I will provide an overview of AzPolicyLens, its features, and how it can benefit your organization.
 
+**12/05/2026 - Update**: I have published a video introducing AzPolicyLens on [AzureTar YouTube channel](https://www.youtube.com/@AzureTar). You can watch the video below:
+
+<iframe src="//www.youtube.com/embed/g2fRcfxRkBA" height="375" width="640" allowfullscreen="" frameborder="0"></iframe>
+
 ## Problem Statement
 
 While working in many customer environments over the last few years, I have observed the following challenges related to Azure Policy:
